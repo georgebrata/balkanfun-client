@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Vue-Boilerplate-Template</title>
-    <meta name="description" content="Vue-Boilerplate-Template">
-    <meta name="keywords" content="Vue;Boilerplate;Template;Webpack;Vue-Router;Vuex;">
-    <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1,minimum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/icons/favicon-16x16.png">
-    <!--[if IE]><link rel="shortcut icon" href="/static/img/icons/favicon.ico"><![endif]-->
-    <!-- Add to home screen for Android and modern mobile browsers -->
-    <link rel="manifest" href="/static/manifest.json">
-    <link rel="mask-icon" href="/static/img/icons/safari-pinned-tab.svg" color="#603cba">
-    <meta name="theme-color" content="#603cba">
-    <!-- Add to home screen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Vue-Boilerplate-Template">
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/icons/apple-touch-icon.png">
-    <!-- Add to home screen for Windows -->
-    <meta name="msapplication-TileImage" content="/static/img/icons/mstile-150x150.png">
-    <meta name="msapplication-TileColor" content="#000000">
-    <% for (var chunk of webpack.chunks) {
+
+<head>
+  <meta charset="utf-8">
+  <title>Balkanfun Romania</title>
+  <meta name="description" content="Balkan Fun Romania este o agentie de turism care se axează pe tineri și pe distracție. Misiunea noastră principală este să îți oferim distracție, acces la prieteni noi și călătorii în cele mai frumoase locuri din Europa!">
+  <meta name="keywords" content="Vue;Boilerplate;Template;Webpack;Vue-Router;Vuex;">
+  <meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1,minimum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--FAVICON AND ICONS-->
+  <link rel="apple-touch-icon" sizes="180x180" href="<%= webpackConfig.output.publicPath %>static/img/brand/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<%= webpackConfig.output.publicPath %>static/img/brand/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<%= webpackConfig.output.publicPath %>static/img/brand/favicon-16x16.png">
+  <link rel="manifest" href="<%= webpackConfig.output.publicPath %>static/site.webmanifest">
+  <link rel="mask-icon" href="<%= webpackConfig.output.publicPath %>static/img/brand/safari-pinned-tab.svg" color="#fcd43a">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <!--FACEBOOK OPENGRAPH METADATA-->
+  <meta property="og:image" content="/og-image.jpg">
+  <meta property="og:image:width" content="279">
+  <meta property="og:image:height" content="279">
+  <meta property="og:description" content="Balkan Fun Romania este o agentie de turisn care se axează pe tineri și pe distracție. Misiunea noastră principală este să &icirc;ți oferim distracție, acces la prieteni noi și călătorii &icirc;n cele mai frumoase locuri din Europa.">
+  <meta property="og:title" content="Balkanfun Romania">
+  <meta property="og:url" content="https://balkanfun.ro">
+  <!--[if IE]><link rel="shortcut icon" href="/static/img/icons/favicon.ico"><![endif]-->
+  <!-- Add to home screen for Android and modern mobile browsers -->
+  <meta name="theme-color" content="#603cba">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Balkan Fun Romania este o agentie de turism care se axează pe tineri și pe distracție. Misiunea noastră principală este să îți oferim distracție, acces la prieteni noi și călătorii în cele mai frumoase locuri din Europa!">
+
+  <!-- Add to home screen for Windows -->
+  <meta name="msapplication-TileColor" content="#000000">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+  <% for (var chunk of webpack.chunks) {
       for (var file of chunk.files) {
         if (file.match(/\.(css)$/)) { %>
     <link rel="<%= chunk.initial ? 'preload' : 'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
     <% }}} %>
-  </head>
+</head>
 
-  <body>
-    <noscript>
-      This is your fallback content in case JavaScript fails to load.
-    </noscript>
-    <div id="root"></div>
-    <!-- built files will be auto injected -->
-    <script src="<%= webpackConfig.output.publicPath %>static/js/vendor.dll.js?v=0506"></script>
-    <!-- Todo: only include in production(@open serviceWorker) -->
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~@CHANGE@~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <!-- 鉴于 serviceWorker 本身的些许限制，此模版默认不引入此功能；欲打开，取消下面一行注释即可 -->
-    <!-- <%= htmlWebpackPlugin.options.serviceWorkerLoader %> -->
-    <!-- built files will be auto injected -->
-  </body>
-  </body>
+<body>
+  <noscript>
+    This is your fallback content in case JavaScript fails to load.
+  </noscript>
+  <div id="root"></div>
+  <!-- built files will be auto injected -->
+  <script src="<%= webpackConfig.output.publicPath %>static/js/vendor.dll.js?v=0506"></script>
+  <!-- Todo: only include in production(@open serviceWorker) -->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~@CHANGE@~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- 鉴于 serviceWorker 本身的些许限制，此模版默认不引入此功能；欲打开，取消下面一行注释即可 -->
+  <!-- <%= htmlWebpackPlugin.options.serviceWorkerLoader %> -->
+  <!-- built files will be auto injected -->
+</body>
+</body>
+
 </html>

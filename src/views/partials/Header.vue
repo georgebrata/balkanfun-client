@@ -2,7 +2,7 @@
   <header class="header">
     <h1 class="logo">
       <router-link to="/">
-        <img src="../../assets/images/logo.png" alt="vue-boilerplate-template">
+        <img src="../../assets/images/logo.png" alt="Acasa">
         <span class="title">{{ $t('projectTitle') }}</span>
       </router-link>
     </h1>

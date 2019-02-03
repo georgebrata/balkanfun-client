@@ -1,7 +1,7 @@
 <template>
   <section class="page-module">
     <div class="module-header">
-      <h3>列表示例</h3>
+      <h3>Intrebari frevente</h3>
     </div>
     <div class="module-content">
       <div class="panel panel-default">
@@ -50,6 +50,12 @@
               :page-size="100" layout="total, sizes, prev, pager, next, jumper"
               :total="200">
             </el-pagination>
+            <h1>test</h1>
+            <h2>test</h2>
+            <h3>test</h3>
+            <h4>test</h4>
+            <h5>test</h5>
+            <h6>test</h6>
           </div>
         </div>
       </div>

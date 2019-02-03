@@ -20,7 +20,7 @@ export default {
   },
 
   en: {
-    projectTitle: 'Vue-Boilerplate-Template',
+    projectTitle: 'balkanfun-client',
     cancel: 'Cancel',
     confirm: 'Confirm',
 
