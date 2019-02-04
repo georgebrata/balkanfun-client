@@ -69,51 +69,57 @@
 </template>
 
 <script>
-import EditDialog from './EditDialog'
+import EditDialog from "./EditDialog";
 
 export default {
-  name: 'DemoList',
+  name: "DemoList",
 
-  props: {
-  },
+  props: {},
 
-  data () {
+  data() {
     return {
-      tableData: [{
-        name: '倾城之链',
-        address: 'https://nicelinks.site/',
-        description: '倾城之链，作为一个开放平台，旨在云集全球优秀网站，探索互联网中更广阔的世界；在这里，你可以轻松发现、学习、分享更多有用或有趣的事物。',
-        date: '2017-09-20'
-      },
-      {
-        name: '晚晴幽草轩',
-        address: 'https://jeffjade.com',
-        description: '个人博客：专注web前端开发和效率工具；也记载关于音乐/电影/旅行等轶事，同时记录下经验总结和人生思考；',
-        date: '2014-09-20'
-      },
-      {
-        name: '静晴轩别苑',
-        address: 'https://nice.lovejade.cn/',
-        description: '繁华尽处，寻一无人山谷，建一木制小屋，铺一青石小路，与你晨钟暮鼓，安之若素。',
-        date: '2018-05-26'
-      },
-      {
-        name: '天意人间舫',
-        address: 'https://blog.lovejade.cn/',
-        description: '辅助主博客——<a href="https://jeffjade.com">晚晴幽草轩</a>の华丽存在',
-        date: '2016-01-20'
-      },
-      {
-        name: 'Vue-Cli3 实践参考',
-        address: 'https://vue-cli3.lovejade.cn/',
-        description: 'Awesome example for rapid Vue.js development using vue-cli3. (vue webpack vuex vue-router vue-i18n element-ui) out of the box.',
-        date: '2018-06-01'
-      }],
+      tableData: [
+        {
+          name: "倾城之链",
+          address: "https://nicelinks.site/",
+          description:
+            "倾城之链，作为一个开放平台，旨在云集全球优秀网站，探索互联网中更广阔的世界；在这里，你可以轻松发现、学习、分享更多有用或有趣的事物。",
+          date: "2017-09-20"
+        },
+        {
+          name: "晚晴幽草轩",
+          address: "https://jeffjade.com",
+          description:
+            "个人博客：专注web前端开发和效率工具；也记载关于音乐/电影/旅行等轶事，同时记录下经验总结和人生思考；",
+          date: "2014-09-20"
+        },
+        {
+          name: "静晴轩别苑",
+          address: "https://nice.lovejade.cn/",
+          description:
+            "繁华尽处，寻一无人山谷，建一木制小屋，铺一青石小路，与你晨钟暮鼓，安之若素。",
+          date: "2018-05-26"
+        },
+        {
+          name: "天意人间舫",
+          address: "https://blog.lovejade.cn/",
+          description:
+            '辅助主博客——<a href="https://jeffjade.com">晚晴幽草轩</a>の华丽存在',
+          date: "2016-01-20"
+        },
+        {
+          name: "Vue-Cli3 实践参考",
+          address: "https://vue-cli3.lovejade.cn/",
+          description:
+            "Awesome example for rapid Vue.js development using vue-cli3. (vue webpack vuex vue-router vue-i18n element-ui) out of the box.",
+          date: "2018-06-01"
+        }
+      ],
       isDialogVisible: false,
       currentPage: 1,
       currentRowData: {},
       currentRowIndex: -1
-    }
+    };
   },
 
   components: {
@@ -124,63 +130,61 @@ export default {
 
   watch: {},
 
-  created () {
-  },
+  created() {},
 
-  mounted () {
-  },
+  mounted() {},
 
   filters: {},
 
   methods: {
-    handleSizeChange (val) {
-      console.log(`每页 ${val} 条`)
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
     },
 
-    handleCurrentChange (val) {
-      this.currentPage = val
-      console.log(`当前页: ${val}`)
+    handleCurrentChange(val) {
+      this.currentPage = val;
+      console.log(`当前页: ${val}`);
     },
 
-    onUpdateRowData (data) {
-      this.currentRowData = data
-      this.$set(this.tableData, this.currentRowIndex, data)
+    onUpdateRowData(data) {
+      this.currentRowData = data;
+      this.$set(this.tableData, this.currentRowIndex, data);
     },
 
     /* ----------------------------On Click Event---------------------------- */
-    onEditClick (rowData, index) {
-      this.currentRowData = rowData
-      this.currentRowIndex = index
-      this.isDialogVisible = true
+    onEditClick(rowData, index) {
+      this.currentRowData = rowData;
+      this.currentRowIndex = index;
+      this.isDialogVisible = true;
     }
   },
 
   locales: {
     en: {
-      demoWorksName: 'Works Name',
-      demoOnlineAddress: 'Online Address',
-      demoWorksDesc: 'Works Description',
-      demoDateOfline: 'Date Of Line'
+      demoWorksName: "Works Name",
+      demoOnlineAddress: "Online Address",
+      demoWorksDesc: "Works Description",
+      demoDateOfline: "Date Of Line"
     },
-    zh: {
-      demoWorksName: '作品名称',
-      demoOnlineAddress: '在线地址',
-      demoWorksDesc: '作品描述',
-      demoDateOfline: '上线日期'
+    ro: {
+      demoWorksName: "Nume",
+      demoOnlineAddress: "Adresa",
+      demoWorksDesc: "Descriere",
+      demoDateOfline: "Data"
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
-@import './../../assets/scss/variables.scss';
-@import './../../assets/scss/mixins.scss';
+@import "./../../assets/scss/variables.scss";
+@import "./../../assets/scss/mixins.scss";
 
-.module-content{
-  .table-operate{
+.module-content {
+  .table-operate {
     margin-top: 15px;
   }
-  .operation-area{
+  .operation-area {
     @include flex-box-center(row);
   }
 
@@ -211,17 +215,17 @@ export default {
     width: 10px;
     height: 16px;
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     border-radius: 10px 10px 0 0;
     background: #f05b72;
     transform: rotateZ(45deg);
     transform-origin: 100% 100% 0;
   }
-  .heart-link{
+  .heart-link {
     display: inline-block;
     margin-left: 15px;
     padding: 10px 20px;
-    border-radius: 4px;
     background-color: $brand;
     vertical-align: top;
   }

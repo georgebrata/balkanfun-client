@@ -1,22 +1,29 @@
 export default {
-  zh: {
-    projectTitle: 'Vue 样板模板',
-    cancel: '取 消',
-    confirm: '确 定',
+  ro: {
+    projectTitle: 'Balkanfun',
+    cancel: 'Cancel',
+    confirm: 'Confirm',
 
-    signIn: '登录',
-    signUp: '注册',
-    signOut: '退出登录',
-    username: '用户名',
-    password: '密码',
+    signIn: 'Logare',
+    signUp: 'Inregistrare',
+    signOut: 'Delogare',
+    firstName: "Prenume",
+    lastName: "Nume",
+    passwordRepeat: "Repeta parola",
+    username: 'Nume de utilizator (username)',
+    password: 'Parola',
 
-    warmReminder: '温馨提示',
+gallery: "GaleRIE",
+    warmReminder: 'Nu uita!',
     switchLang: '切换语言',
+    offers: "Oferte",
+    faq: "Intrebari Frecvente",
 
-    operation: '操作',
-    edit: '编辑',
-    pleaseEnter: '请输入',
-    pleaseSelect: '请选择'
+
+    operation: 'Operatiunea',
+    edit: 'Editeaza',
+    pleaseEnter: 'Te rugam sa introduci',
+    pleaseSelect: 'Te rugam sa selectezi'
   },
 
   en: {
@@ -25,7 +32,11 @@ export default {
     confirm: 'Confirm',
 
     signIn: 'Sign In',
+    offers: "Offers",
     signUp: 'Sign Up',
+    firstName: "First name",
+    lastName: "Last name",
+    passwordRepeat: "Repeat password",
     signOut: 'Sign Out',
     username: 'Username',
     password: 'Password',

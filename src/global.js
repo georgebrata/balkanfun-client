@@ -8,8 +8,9 @@ Vue.use(VueI18n)
 
 /* inject i18n */
 const browserLanguage = (window.navigator.language || window.navigator.browserLanguage).split('-')[0]
-const lang = Cookies.get('lang') || (browserLanguage in locales ? browserLanguage : 'en')
-Vue.config.lang = lang
+const lang = Cookies.get('lang') || (browserLanguage in locales ? browserLanguage : 'ro')
+//Vue.config.lang = lang
+Vue.config.lang = 'ro'
 
 Object.keys(locales).forEach(lang => {
   Vue.locale(lang, locales[lang])

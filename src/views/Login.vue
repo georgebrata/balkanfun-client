@@ -1,8 +1,8 @@
 <template>
   <div class="login-wrap">
     <div class="login-box">
-      <img src="../assets/images/logo.png" alt="">
-      <h1 class="heading">{{ $t('projectTitle') }}</h1>
+      <img src="../assets/images/balkanfun-logo-small.png" alt="Balkanfun logo">
+      <h1 class="heading">{{ $t('signIn') }}</h1>
       <el-form :model="account" :rules="rules" ref="validateForm">
         <el-form-item prop="username">
           <el-input v-model="account.username" :placeholder="$t('username')"></el-input>

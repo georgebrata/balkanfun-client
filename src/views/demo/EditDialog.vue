@@ -97,11 +97,11 @@ export default{
       demoWorksDesc: 'Works Description',
       demoDateOfline: 'Date Of Line'
     },
-    zh: {
-      demoWorksName: '作品名称',
-      demoOnlineAddress: '在线地址',
-      demoWorksDesc: '作品描述',
-      demoDateOfline: '上线日期'
+    ro: {
+      demoWorksName: 'Nume',
+      demoOnlineAddress: 'Adresa',
+      demoWorksDesc: 'Descriere',
+      demoDateOfline: 'Data'
     }
   }
 }

@@ -37,6 +37,8 @@ export default {
 @import "./../../assets/scss/variables.scss";
 @import "./../../assets/scss/mixins.scss";
 
+
+
 .sidenav{
   position: fixed;
   left: 0;
@@ -45,7 +47,7 @@ export default {
   left: 0;
   top: $header-height;
   z-index: 8;
-  width: $sidenav-width;
+  width: 100%;
   min-width: 200px;
   background-color: #eef1f6;
   a {
@@ -67,5 +69,8 @@ export default {
     font-size: $font-large;
     position: relative;
   }
+}
+.sidenav {
+  display: none;
 }
 </style>

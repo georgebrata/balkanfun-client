@@ -7,12 +7,11 @@
           <span class="cener-zero"><icon class="zero-icon" name="zero"></icon></span>
           <span class="right-four">4</span>
         </div>
-        <p class="error-404-body-message">YOU&nbsp;&nbsp;LOOK&nbsp;&nbsp;LOST</p>
+        <p class="error-404-body-message">Te-ai ratacit?</p>
         <div class="error-404-btns">
-          <el-button @click="onGoHomeClick" :plain="true" size="large" type="info">
-          返回首页
-          </el-button>
-          <el-button @click="onBackPageClick" :plain="true" size="large" ttype="info">返回上一页
+            <el-button @click="onBackPageClick" type="primary" icon="el-icon-arrow-left">Inapoi</el-button>
+          <el-button @click="onGoHomeClick" :plain="false" size="large" type="info">
+          Acasa
           </el-button>
         </div>
       </el-card>
@@ -139,8 +138,6 @@ export default {
     text-align: center;
     font-size: 1rem;
     font-weight: 500;
-    letter-spacing: 12px;
-    color: #dddde2;
   }
 }
 

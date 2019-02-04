@@ -2,3 +2,33 @@
 //
 // Copy variables from `_variables.scss` to this file to override default values
 // without modifying source files.
+
+// Create grayscale
+$gray-dark:                 #292b2c !default;
+$gray:                      #464a4c !default;
+$gray-light:                #636c72 !default;
+$gray-lighter:              #eceeef !default;
+$gray-lightest:             #f7f7f9 !default;
+$brand-inverse:             $gray-dark !default;
+
+// Balkanfun color scheme
+$brand-primary:             #FCD43A !default;
+$brand-secondary:           #0088cc !default;
+$brand-success:             #67C23A !default;
+$brand-info:                #E6A23C !default;
+$brand-warning:             #F56C6C !default;
+$brand-danger:              #909399 !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-rounded:            false !default;
+$enable-shadows:            true !default;
+
+$badge-pill-border-radius:    10rem !default;
+
+
+$border-radius:          0 !default;
+$border-radius-lg:       0 !default;
+$border-radius-sm:       0 !default;

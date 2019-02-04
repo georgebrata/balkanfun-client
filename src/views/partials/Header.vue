@@ -1,8 +1,8 @@
 <template>
-  <header class="header">
+  <header class="header mobile-header">
     <h1 class="logo">
       <router-link to="/">
-        <img src="../../assets/images/logo.png" alt="Acasa">
+        <img src="../../assets/images/balkanfun-logo-small.png" alt="Balkanfun LOGO">
         <span class="title">{{ $t('projectTitle') }}</span>
       </router-link>
     </h1>
@@ -11,9 +11,14 @@
       <span></span>
     </a>
 
-    <el-dropdown @command="handleCommand" class="operate" trigger="click">
+    <a href="javascript:;" class="search" @click="onToggleMenuClick" >
+      <span></span>
+    </a>
+
+<!--
+    <el-dropdown @command="handleCommand" class="operate" trigger="click" style="color: red;">
       <a href="javascript:;" class="account">
-        <icon name="account"></icon>
+        <icon name="menu"></icon>
         <span>{{ user.username || $t('username')}}</span>
         <span class="caret"></span>
       </a>
@@ -26,62 +31,68 @@
         </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
+    -->
   </header>
 </template>
 
 <script>
-import Vue from 'vue'
-import Cookies from 'js-cookie'
+import Vue from "vue";
+import Cookies from "js-cookie";
 
 export default {
-  name: 'header',
+  name: "header",
 
-  data () {
+  data() {
     return {
       user: {}
-    }
+    };
   },
 
-  components: {
-  },
+  components: {},
 
   computed: {
+    isMobile() {
+      return true;
+    }
   },
 
   methods: {
-    handleCommand (item) {
-      this[`on${item}Click`]()
+    handleCommand(item) {
+      this[`on${item}Click`]();
     },
 
     /* ----------------------------On Click Event---------------------------- */
-    onToggleMenuClick () {
-      this.$triggerSidenav()
+    onToggleMenuClick() {
+      this.$triggerSidenav();
     },
 
-    onLogoutClick () {
-      this.$apis.user.logout().then(result => {
-        Cookies.remove('isLogin')
+    onLogoutClick() {
+      this.$apis.user
+        .logout()
+        .then(result => {
+          Cookies.remove("isLogin");
 
-        this.$store.commit('$vuexSetUserInfo', {})
-        this.$router.push('/login')
-      }).catch((err) => {
-        this.$router.push('/')
-        this.$message.error(err.msg)
-      })
+          this.$store.commit("$vuexSetUserInfo", {});
+          this.$router.push("/login");
+        })
+        .catch(err => {
+          this.$router.push("/");
+          this.$message.error(err.msg);
+        });
     },
 
-    onSwitchClick () {
-      let targetLang = this.$currentLang === 'zh' ? 'en' : 'zh'
-      Cookies.set('lang', targetLang)
-      Vue.config.lang = targetLang
+    onSwitchClick() {
+      let targetLang = this.$currentLang === "ro" ? "en" : "ro";
+      Cookies.set("lang", targetLang);
+      Vue.config.lang = targetLang;
     }
   }
-}
+};
 </script>
 
 <style type="text/css" lang="scss">
-@import './../../assets/scss/variables.scss';
-@import './../../assets/scss/mixins.scss';
+@import "./../../assets/scss/variables.scss";
+@import "./../../assets/scss/mixins.scss";
 
 #app .header {
   position: fixed;
@@ -93,7 +104,8 @@ export default {
   @include clearfix();
 
   a {
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       text-decoration: none;
       span {
         text-decoration: none;
@@ -116,7 +128,7 @@ export default {
     display: inline-block;
     vertical-align: middle;
     font-size: $font-large;
-    color: #fff;
+    color: Black;
   }
   .notification {
     float: right;
@@ -145,7 +157,7 @@ export default {
       @include flex-box-center(row);
       color: #fff;
     }
-    .icon-account{
+    .icon-account {
       width: 30px;
       height: 30px;
       margin-right: 10px;
@@ -157,12 +169,13 @@ export default {
   display: none;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   padding: 20px 15px 10px;
   width: 60px;
   height: 60px;
 }
-.menu span:after, .menu span:before {
+.menu span:after,
+.menu span:before {
   content: "";
   position: absolute;
   left: 0;
@@ -175,10 +188,12 @@ export default {
   position: relative;
   display: block;
 }
-.menu span, .menu span:after, .menu span:before {
+.menu span,
+.menu span:after,
+.menu span:before {
   width: 100%;
   height: 3px;
-  background-color: #fff;
+  background-color: black;
   -webkit-transition: all 0.3s;
   backface-visibility: hidden;
 }
@@ -192,14 +207,14 @@ export default {
   transform: rotate(-45deg) translate(4px, -5px);
 }
 
-.dropmenu{
-  .icon{
+.dropmenu {
+  .icon {
     vertical-align: middle;
-    margin: .1rem .5rem .1rem .1rem;
+    margin: 0.1rem 0.5rem 0.1rem 0.1rem;
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   #app .header {
     .menu {
       display: block;
