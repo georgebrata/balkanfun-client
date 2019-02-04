@@ -3,11 +3,10 @@
     <header-component></header-component>
     <div class="frame-content">
       <side-nav></side-nav>
-      <h1>FAQ</h1>
-      <h1>FAQ</h1>
-      <h1>FAQ</h1>
+      <h1>Despre noi</h1>
+      <h1>Despre noi</h1>
+      <h1>Despre noi</h1>
       <main @click="onHideMenuClick">
-        <router-view></router-view>
       </main>
     </div>
   </div>
@@ -20,7 +19,7 @@ import Divider from "@views/partials/Divider";
 import RoutesMapConfig from "@router/routes";
 
 export default {
-  name: 'FAQPage',
+  name: 'AboutUsPage',
   props: {},
 
   data() {

@@ -1,6 +1,6 @@
 <template>
   <div class="sidenav">
-    <el-menu router unique-opened
+    <el-menu router
       :default-openeds="defaultOpeneds">
       <template v-for="(item, index) in menuList">
         <side-nav-node :model="item"></side-nav-node>
@@ -17,7 +17,7 @@ export default {
 
   data () {
     return {
-      defaultOpeneds: ['demo']
+      defaultOpeneds: ['offers', 'gallery', 'faq', 'about-us', 'contact'],
     }
   },
 

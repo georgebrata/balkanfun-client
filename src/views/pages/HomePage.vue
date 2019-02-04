@@ -4,7 +4,11 @@
     <div class="frame-content">
       <side-nav></side-nav>
       <main @click="onHideMenuClick">
-        <router-view></router-view>
+        <transition>
+          <keep-alive>
+            <router-view></router-view>
+          </keep-alive>
+        </transition>
       </main>
     </div>
   </div>
@@ -16,7 +20,7 @@ import HeaderComponent from "@views/partials/Header";
 import RoutesMapConfig from "@router/routes";
 
 export default {
-  name: 'HomePage',
+  name: "HomePage",
   props: {},
 
   data() {
@@ -31,7 +35,7 @@ export default {
 
   components: {
     SideNav,
-    HeaderComponent
+    HeaderComponent,
   },
 
   methods: {
@@ -55,8 +59,8 @@ export default {
 
     onHideMenuClick() {
       document.getElementById("app").className = "";
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -11,24 +11,23 @@ export default [
   {
     path: '/register',
     meta: {
-      title: '登录',
+      title: 'register',
       ignoreAuth: true
     },
     component: resolve => require(['@views/Register'], resolve)
   },
   {
-    path: '/',
+    path: '/error',
     meta: {
-      title: 'Acasa',
+      title: 'Oups! An error occured',
       ignoreAuth: true
     },
-    component: resolve => require(['@views/pages/HomePage'], resolve)
+    component: resolve => require(['@views/ErrorPage'], resolve)
   },
-  /*
   {
-    path: '/',
-    redirect: '/muie'
-  },*/
+    path: '',
+    redirect: '/'
+  },
   {
     path: '*',
     meta: {

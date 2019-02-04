@@ -1,6 +1,6 @@
 export default {
   ro: {
-    projectTitle: 'Balkanfun',
+    projectTitle: 'BalkanFun',
     cancel: 'Cancel',
     confirm: 'Confirm',
 
@@ -13,12 +13,11 @@ export default {
     username: 'Nume de utilizator (username)',
     password: 'Parola',
 
-gallery: "GaleRIE",
+    gallery: "GaleRIE",
     warmReminder: 'Nu uita!',
-    switchLang: '切换语言',
-    offers: "Oferte",
+    switchLang: 'Schimba limba',
+    offers: "Offers",
     faq: "Intrebari Frecvente",
-
 
     operation: 'Operatiunea',
     edit: 'Editeaza',

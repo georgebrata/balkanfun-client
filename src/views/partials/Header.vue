@@ -1,5 +1,6 @@
 <template>
   <header class="header mobile-header">
+
     <h1 class="logo">
       <router-link to="/">
         <img src="../../assets/images/balkanfun-logo-small.png" alt="Balkanfun LOGO">
@@ -7,31 +8,39 @@
       </router-link>
     </h1>
 
-    <a href="javascript:;" class="menu" @click="onToggleMenuClick" >
+
+
+    <!-- mobile menu toggle -->
+    <a href="javascript:;" class="menu hidden-sm-and-up" @click="onToggleMenuClick" >
       <span></span>
     </a>
 
-    <a href="javascript:;" class="search" @click="onToggleMenuClick" >
-      <span></span>
-    </a>
+    <el-menu class="el-menu-demo float-right hidden-sm-and-down" mode="horizontal" @select="handleSelect">
+      <el-menu-item index="1">
+        <router-link to="/">Acasa</router-link>
+      </el-menu-item>
+      <el-submenu index="2">
+        <template slot="title">Oferte</template>
+        <el-menu-item index="2.1">
+          <router-link to="/offer/offer1">Oferta 1</router-link>
+        </el-menu-item>
+        <el-menu-item index="2.2">
+          <router-link to="/offer/offer2">Oferta 2</router-link>
+        </el-menu-item>
+      </el-submenu>
+      <el-menu-item index="3">
+        <router-link to="/gallery">Galerie</router-link>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <router-link to="/about-us">Despre noi</router-link>
+      </el-menu-item>
+      <el-menu-item index="5">
+        <router-link to="/contact">Contact</router-link>
+      </el-menu-item>
+    </el-menu>
 
-<!--
-    <el-dropdown @command="handleCommand" class="operate" trigger="click" style="color: red;">
-      <a href="javascript:;" class="account">
-        <icon name="menu"></icon>
-        <span>{{ user.username || $t('username')}}</span>
-        <span class="caret"></span>
-      </a>
-      <el-dropdown-menu slot="dropdown" class="dropmenu">
-        <el-dropdown-item  command="Switch">
-          <icon name="switch"></icon>{{ $t('switchLang') }}
-        </el-dropdown-item>
-        <el-dropdown-item divided command="Logout">
-          <icon name="logout"></icon>{{ $t('signOut') }}
-        </el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
-    -->
+
+
   </header>
 </template>
 
@@ -44,7 +53,7 @@ export default {
 
   data() {
     return {
-      user: {}
+      user: {},
     };
   },
 
@@ -53,7 +62,7 @@ export default {
   computed: {
     isMobile() {
       return true;
-    }
+    },
   },
 
   methods: {
@@ -85,8 +94,8 @@ export default {
       let targetLang = this.$currentLang === "ro" ? "en" : "ro";
       Cookies.set("lang", targetLang);
       Vue.config.lang = targetLang;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -114,14 +123,14 @@ export default {
   }
   .logo {
     float: left;
-    padding: 10px 0 8px 35px;
+    padding: 5px 0 8px 35px;
 
     img {
       display: inline-block;
       vertical-align: middle;
       width: 36px;
       height: auto;
-      margin-right: 10px;
+      margin-right: 5px;
     }
   }
   .title {
@@ -129,6 +138,7 @@ export default {
     vertical-align: middle;
     font-size: $font-large;
     color: Black;
+    margin-right: 50px;
   }
   .notification {
     float: right;

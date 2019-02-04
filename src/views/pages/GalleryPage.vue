@@ -4,7 +4,8 @@
     <div class="frame-content">
       <side-nav></side-nav>
       <main @click="onHideMenuClick">
-        <router-view></router-view>
+        <router-view >
+        </router-view>
       </main>
     </div>
   </div>
@@ -16,7 +17,7 @@ import HeaderComponent from "@views/partials/Header";
 import RoutesMapConfig from "@router/routes";
 
 export default {
-  name: 'GaleriePage',
+  name: "GalleryPage",
   props: {},
 
   data() {
@@ -31,7 +32,7 @@ export default {
 
   components: {
     SideNav,
-    HeaderComponent
+    HeaderComponent,
   },
 
   methods: {
@@ -55,8 +56,8 @@ export default {
 
     onHideMenuClick() {
       document.getElementById("app").className = "";
-    }
-  }
+    },
+  },
 };
 </script>
 

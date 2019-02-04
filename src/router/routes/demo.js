@@ -1,54 +1,129 @@
-import OfertePage from '@views/pages/OfertePage'
-import GalerryPage from '@views/pages/GalerryPage'
+import OffersPage from '@views/pages/OffersPage'
+import GalleryPage from '@views/pages/GalleryPage'
 import FAQPage from '@views/pages/FAQPage'
-import { $utils } from '@helper'
+import ContactPage from '@views/pages/ContactPage'
+import AboutUsPage from '@views/pages/AboutUsPage'
+import HomePage from '@views/pages/HomePage'
+
+import List from '@views/demo/List'
+import {
+ $utils,
+} from '@helper'
 
 export default [{
-  path: '/oferte',
-  component: OfertePage,
-  fullpath: 'oferte',
+ path: '/',
+ component: FullWidthPage,
+ fullpath: '/',
+ // isHideInMenu: true,
+ meta: {
+  title: $utils.titleLang('Acasa'),
+  ignoreAuth: true,
+ },
+ children: [{
+   path: 'offer1',
+   fullpath: '/offer/offer1',
+   isHideInMenu: false,
+   meta: {
+    title: $utils.titleLang('Oferta 1'),
+    ignoreAuth: true,
+   },
+   component: resolve => require(['@views/partials/OffersGrid'], resolve),
+  },
+  {
+   path: 'offer',
+   fullpath: '/offer/offer2',
+   meta: {
+    title: $utils.titleLang('Oferta 2'),
+    ignoreAuth: true,
+   },
+   component: resolve => require(['@views/partials/OffersGrid'], resolve),
+  },
+ ],
+}]
+
+
+/*
+export default [
+  {
+  path: '/offers',
+  component: OffersPage,
+  fullpath: 'offers',
   // isHideInMenu: true,
   meta: {
-    title: $utils.titleLang('offers'),
+    title: $utils.titleLang('Oferte'),
+    ignoreAuth: true,
   },
   children: [
     {
-      path: 'oferta-1',
-      fullpath: '/oferte/oferta-1',
+      path: 'offer1',
+      fullpath: '/offer/offer1',
       isHideInMenu: false,
       meta: {
         title: $utils.titleLang('Oferta 1'),
         ignoreAuth: true,
       },
-      component: resolve => require(['@components/OfertaCard'], resolve),
+      component: resolve => require(['@views/partials/OffersGrid'], resolve),
     },
     {
-      path: 'oferta-2',
-      fullpath: '/oferte/oferta-2',
-      isHideInMenu: false,
+      path: 'offer',
+      fullpath: '/offer/offer2',
       meta: {
         title: $utils.titleLang('Oferta 2'),
         ignoreAuth: true,
       },
-      component: resolve => require(['@components/OfertaCard'], resolve),
-    }, // se pot adauga oferte dinamic, in functie de raspunsul de la un server
+      component: resolve => require(['@views/partials/OffersGrid'], resolve),
+    },
   ],
-}, {
-  path: '/galerie',
-  component: GalerryPage,
-  fullpath: 'galerie',
-  // isHideInMenu: true,
+},
+{
+  path: '/gallery',
+  component: GalleryPage,
+  fullpath: 'gallery',
+  isHideInMenu: false,
   meta: {
-    title: $utils.titleLang('gallery'),
+    title: $utils.titleLang('Galerie'),
     ignoreAuth: true,
   },
-}, {
-  path: '/intrebari-frecvente',
+},
+{
+  path: '/contact',
+  component: ContactPage,
+  fullpath: 'contact',
+  isHideInMenu: false,
+  meta: {
+    title: $utils.titleLang('Contact'),
+    ignoreAuth: true,
+  },
+},
+{
+  path: '/about-us',
+  component: AboutUsPage,
+  fullpath: 'about-us',
+  isHideInMenu: false,
+  meta: {
+    title: $utils.titleLang('Despre noi'),
+    ignoreAuth: true,
+  },
+},
+{
+  path: '/faq',
   component: FAQPage,
-  fullpath: 'intrebari-frecvente',
-  // isHideInMenu: true,
+  fullpath: 'faq',
+  isHideInMenu: false,
   meta: {
-    title: $utils.titleLang('faq'),
+    title: $utils.titleLang('Intrebari frecvente'),
     ignoreAuth: true,
   },
-}]
+},
+  {
+  path: '/',
+  component: FAQPage,
+  fullpath: '/',
+  // isHideInMenu: true,
+  components: [],
+  meta: {
+    title: $utils.titleLang('Acasa'),
+    ignoreAuth: true,
+  }},
+]
+*/
