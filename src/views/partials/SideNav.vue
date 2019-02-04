@@ -1,6 +1,6 @@
 <template>
   <div class="sidenav">
-    <el-menu router unique-opened
+    <el-menu router
       :default-openeds="defaultOpeneds">
       <template v-for="(item, index) in menuList">
         <side-nav-node :model="item"></side-nav-node>
@@ -17,7 +17,7 @@ export default {
 
   data () {
     return {
-      defaultOpeneds: ['demo']
+      defaultOpeneds: ['offers', 'gallery', 'faq', 'about-us', 'contact'],
     }
   },
 
@@ -37,6 +37,8 @@ export default {
 @import "./../../assets/scss/variables.scss";
 @import "./../../assets/scss/mixins.scss";
 
+
+
 .sidenav{
   position: fixed;
   left: 0;
@@ -45,7 +47,7 @@ export default {
   left: 0;
   top: $header-height;
   z-index: 8;
-  width: $sidenav-width;
+  width: 100%;
   min-width: 200px;
   background-color: #eef1f6;
   a {
@@ -67,5 +69,8 @@ export default {
     font-size: $font-large;
     position: relative;
   }
+}
+.sidenav {
+  display: none;
 }
 </style>

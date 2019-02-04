@@ -3,17 +3,11 @@
     <div class="error-404-body">
       <el-card>
         <div class="error-404-body-title">
-          <span class="left-four">4</span>
-          <span class="cener-zero"><icon class="zero-icon" name="zero"></icon></span>
-          <span class="right-four">4</span>
+          <span class="left-four">eroare</span>
+          <span class="right-four">eroare</span>
         </div>
-        <p class="error-404-body-message">Te-ai ratacit?</p>
-        <div class="error-404-btns">
-            <el-button @click="onBackPageClick" type="primary" icon="el-icon-arrow-left">Inapoi</el-button>
-          <el-button @click="onGoHomeClick" :plain="false" size="large" type="info">
-          Acasa
-          </el-button>
-        </div>
+        <p class="error-404-body-message danger">Oups! Am intampinat o eroare. Te rugam sa incerci mai tarziu.</p>
+        <br/><br/>
       </el-card>
     </div>
   </div>
@@ -21,7 +15,7 @@
 
 <script>
 export default {
-  name: 'Error404',
+  name: 'ErrorPage',
 
   methods: {
     onBackPageClick() {
@@ -109,7 +103,7 @@ export default {
     text-align: center;
     font-size: 7rem;
     font-weight: 700;
-    color: #2d8cf0;
+    color: red;
     height: 13rem;
     line-height: 13rem;
     .cener-zero{

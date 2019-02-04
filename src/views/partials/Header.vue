@@ -1,99 +1,123 @@
 <template>
-  <header class="header">
+  <header class="header mobile-header">
+
     <h1 class="logo">
       <router-link to="/">
-        <img src="../../assets/images/logo.png" alt="vue-boilerplate-template">
+        <img src="../../assets/images/balkanfun-logo-small.png" alt="Balkanfun LOGO">
         <span class="title">{{ $t('projectTitle') }}</span>
       </router-link>
     </h1>
 
-    <a href="javascript:;" class="menu" @click="onToggleMenuClick" >
+    <!-- mobile menu toggle -->
+    <a href="javascript:;" class="menu hidden-sm-and-up" @click="onToggleMenuClick" >
       <span></span>
     </a>
 
-    <el-dropdown @command="handleCommand" class="operate" trigger="click">
-      <a href="javascript:;" class="account">
-        <icon name="account"></icon>
-        <span>{{ user.username || $t('username')}}</span>
-        <span class="caret"></span>
-      </a>
-      <el-dropdown-menu slot="dropdown" class="dropmenu">
-        <el-dropdown-item  command="Switch">
-          <icon name="switch"></icon>{{ $t('switchLang') }}
-        </el-dropdown-item>
-        <el-dropdown-item divided command="Logout">
-          <icon name="logout"></icon>{{ $t('signOut') }}
-        </el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
+    <el-menu class="el-menu-demo float-right hidden-sm-and-down" mode="horizontal" @select="handleSelect">
+      <el-menu-item index="1">
+        <router-link to='/'>Acasa</router-link>
+      </el-menu-item>
+      <el-submenu index="2">
+        <template slot="title">Oferte</template>
+        <el-menu-item index="2.1">
+          <router-link to="/offers/offer1">Oferta 1</router-link>
+        </el-menu-item>
+        <el-menu-item index="2.2">
+          <router-link to="/offers/offer2">Oferta 2</router-link>
+        </el-menu-item>
+      </el-submenu>
+      <el-menu-item index="3">
+        <router-link to="/faq">Intrebari frecvente</router-link>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <router-link to="/gallery">Galerie</router-link>
+      </el-menu-item>
+      <el-menu-item index="5">
+        <router-link to="/about-us">Despre noi</router-link>
+      </el-menu-item>
+      <el-menu-item index="6">
+        <router-link to="/contact">Contact</router-link>
+      </el-menu-item>
+    </el-menu>
+
+
+
   </header>
 </template>
 
 <script>
-import Vue from 'vue'
-import Cookies from 'js-cookie'
+import Vue from "vue";
+import Cookies from "js-cookie";
 
 export default {
-  name: 'header',
+  name: "header",
 
-  data () {
+  data() {
     return {
-      user: {}
-    }
+      user: {},
+    };
   },
 
-  components: {
-  },
+  components: {},
 
   computed: {
+    isMobile() {
+      return true;
+    },
   },
 
   methods: {
-    handleCommand (item) {
-      this[`on${item}Click`]()
+    handleCommand(item) {
+      this[`on${item}Click`]();
     },
 
     /* ----------------------------On Click Event---------------------------- */
-    onToggleMenuClick () {
-      this.$triggerSidenav()
+    onToggleMenuClick() {
+      this.$triggerSidenav();
     },
 
-    onLogoutClick () {
-      this.$apis.user.logout().then(result => {
-        Cookies.remove('isLogin')
+    onLogoutClick() {
+      this.$apis.user
+        .logout()
+        .then(result => {
+          Cookies.remove("isLogin");
 
-        this.$store.commit('$vuexSetUserInfo', {})
-        this.$router.push('/login')
-      }).catch((err) => {
-        this.$router.push('/')
-        this.$message.error(err.msg)
-      })
+          this.$store.commit("$vuexSetUserInfo", {});
+          this.$router.push("/login");
+        })
+        .catch(err => {
+          this.$router.push("/");
+          this.$message.error(err.msg);
+        });
     },
 
-    onSwitchClick () {
-      let targetLang = this.$currentLang === 'zh' ? 'en' : 'zh'
-      Cookies.set('lang', targetLang)
-      Vue.config.lang = targetLang
-    }
-  }
-}
+    onSwitchClick() {
+      let targetLang = this.$currentLang === "ro" ? "en" : "ro";
+      Cookies.set("lang", targetLang);
+      Vue.config.lang = targetLang;
+    },
+  },
+};
 </script>
 
 <style type="text/css" lang="scss">
-@import './../../assets/scss/variables.scss';
-@import './../../assets/scss/mixins.scss';
+@import "./../../assets/scss/variables.scss";
+@import "./../../assets/scss/mixins.scss";
 
 #app .header {
+  box-sizing: content-box;
   position: fixed;
   z-index: 9;
   height: $header-height;
   width: 100%;
   min-width: 320px;
   background-color: $header-bg;
+  border-bottom: solid 1px #e6e6e6;
   @include clearfix();
 
   a {
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       text-decoration: none;
       span {
         text-decoration: none;
@@ -102,21 +126,22 @@ export default {
   }
   .logo {
     float: left;
-    padding: 10px 0 8px 35px;
+    padding: 5px 0 8px 35px;
 
     img {
       display: inline-block;
       vertical-align: middle;
       width: 36px;
       height: auto;
-      margin-right: 10px;
+      margin-right: 5px;
     }
   }
   .title {
     display: inline-block;
     vertical-align: middle;
     font-size: $font-large;
-    color: #fff;
+    color: Black;
+    margin-right: 50px;
   }
   .notification {
     float: right;
@@ -145,7 +170,7 @@ export default {
       @include flex-box-center(row);
       color: #fff;
     }
-    .icon-account{
+    .icon-account {
       width: 30px;
       height: 30px;
       margin-right: 10px;
@@ -157,12 +182,13 @@ export default {
   display: none;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   padding: 20px 15px 10px;
   width: 60px;
   height: 60px;
 }
-.menu span:after, .menu span:before {
+.menu span:after,
+.menu span:before {
   content: "";
   position: absolute;
   left: 0;
@@ -175,10 +201,12 @@ export default {
   position: relative;
   display: block;
 }
-.menu span, .menu span:after, .menu span:before {
+.menu span,
+.menu span:after,
+.menu span:before {
   width: 100%;
   height: 3px;
-  background-color: #fff;
+  background-color: black;
   -webkit-transition: all 0.3s;
   backface-visibility: hidden;
 }
@@ -192,14 +220,14 @@ export default {
   transform: rotate(-45deg) translate(4px, -5px);
 }
 
-.dropmenu{
-  .icon{
+.dropmenu {
+  .icon {
     vertical-align: middle;
-    margin: .1rem .5rem .1rem .1rem;
+    margin: 0.1rem 0.5rem 0.1rem 0.1rem;
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   #app .header {
     .menu {
       display: block;
@@ -222,5 +250,8 @@ export default {
       }
     }
   }
+}
+.el-menu-demo {
+  border-bottom: 0 !important;
 }
 </style>

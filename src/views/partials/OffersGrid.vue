@@ -59,20 +59,14 @@
           </div>
         </div>
       </div>
-      <edit-dialog
-        :pdata="currentRowData"
-        v-model="isDialogVisible"
-        @dispatch-data="onUpdateRowData">
-      </edit-dialog>
     </div>
   </section>
 </template>
 
 <script>
-import EditDialog from "./EditDialog";
 
 export default {
-  name: "DemoList",
+  name: "OffersGrid",
 
   props: {},
 
@@ -123,7 +117,7 @@ export default {
   },
 
   components: {
-    EditDialog
+
   },
 
   computed: {},

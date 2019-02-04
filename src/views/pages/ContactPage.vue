@@ -1,17 +1,12 @@
 <template>
   <section class="page-module">
     <div class="module-header">
-      <h3>表单示例</h3>
+      <h3>Scrie-ne un mesaj</h3>
     </div>
     <div class="module-content">
       <div class="panel panel-default">
         <div class="panel-body">
           <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px">
-            <div class="form-group col-sm-6">
-              <el-form-item label="当前时间" prop="name">
-                <span>{{ new Date() | dateTimeConvert }}</span>
-              </el-form-item>
-            </div>
 
             <div class="form-group col-sm-6">
               <el-form-item label="活动名称" prop="name">
@@ -79,9 +74,15 @@
     </div>
   </section>
 </template>
+
 <script>
+import RoutesMapConfig from "@router/routes";
+
 export default {
-  name: "DemoForm",
+  name: "ConatctPage",
+
+  components: {},
+
   props: {},
 
   data() {

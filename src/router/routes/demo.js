@@ -1,33 +1,104 @@
-import Frame from '@views/partials/Frame'
+import OffersListPage from '@views/pages/OffersListPage'
+import OfferPage from '@views/pages/OfferPage'
+import GalleryPage from '@views/pages/GalleryPage'
+import FAQPage from '@views/pages/FAQPage'
+import ContactPage from '@views/pages/ContactPage'
+import AboutUsPage from '@views/pages/AboutUsPage'
+import HomePage from '@views/pages/HomePage'
+
+import PageFrame from '@views/partials/PageFrame'
 import { $utils } from '@helper'
 
 export default [{
-  path: '/demo',
-  component: Frame,
-  fullpath: 'demo',
-  // isHideInMenu: true,
+  path: '/',
+  component: PageFrame,
+  fullpath: '/',
+  isHideInMenu: true,
   meta: {
-    title: $utils.titleLang('示例模块', 'Demo Moudle')
+    title: $utils.titleLang('Home'),
+    ignoreAuth: true
   },
   children: [
     {
-      path: 'form',
-      fullpath: '/demo/form',
+      path: '/',
+      fullpath: '/',
       isHideInMenu: false,
       meta: {
-        title: $utils.titleLang('示例表单', 'Demo Form'),
+        title: $utils.titleLang('Acasa'),
         ignoreAuth: true
       },
-      component: resolve => require(['@views/demo/Form'], resolve)
+      component: resolve => require(['@views/pages/HomePage'], resolve)
     },
     {
-      path: 'list',
-      fullpath: '/demo/list',
+      path: 'offers',
+      fullpath: '/offers',
       meta: {
-        title: $utils.titleLang('示例列表', 'Demo  List'),
+        title: $utils.titleLang('Oferte'),
         ignoreAuth: true
       },
-      component: resolve => require(['@views/demo/List'], resolve)
-    }
+      component: resolve => require(['@views/pages/OffersListPage'], resolve),
+      children: [
+        {
+          path: 'offer1',
+          fullpath: '/offers/offer1',
+          isHideInMenu: false,
+          meta: {
+            title: $utils.titleLang('Oferta 1'),
+            ignoreAuth: true
+          },
+          component: resolve => require(['@views/pages/OfferPage'], resolve)
+        },
+        {
+          path: 'offer2',
+          fullpath: '/offers/offer2',
+          meta: {
+            title: $utils.titleLang('Oferta 1'),
+            ignoreAuth: true
+          },
+          component: resolve => require(['@views/pages/OfferPage'], resolve),
+
+        }
+      ]
+    },
+    {
+      path: 'gallery',
+      fullpath: '/galerie',
+      isHideInMenu: false,
+      meta: {
+        title: $utils.titleLang('Galerie'),
+        ignoreAuth: true
+      },
+      component: resolve => require(['@views/pages/GalleryPage'], resolve)
+    },
+    {
+      path: 'faq',
+      fullpath: '/intrebari-frecvente',
+      isHideInMenu: false,
+      meta: {
+        title: $utils.titleLang('Intrebari frecvente'),
+        ignoreAuth: true
+      },
+      component: resolve => require(['@views/pages/FAQPage'], resolve)
+    },
+    {
+      path: 'about-us',
+      fullpath: '/despre-noi',
+      isHideInMenu: false,
+      meta: {
+        title: $utils.titleLang('Despre noi'),
+        ignoreAuth: true
+      },
+      component: resolve => require(['@views/pages/AboutUsPage'], resolve)
+    },
+    {
+      path: 'contact',
+      fullpath: '/contact',
+      isHideInMenu: false,
+      meta: {
+        title: $utils.titleLang('Conatct'),
+        ignoreAuth: true
+      },
+      component: resolve => require(['@views/pages/ContactPage'], resolve)
+    },
   ]
 }]

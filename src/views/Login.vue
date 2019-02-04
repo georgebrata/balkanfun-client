@@ -1,8 +1,8 @@
 <template>
   <div class="login-wrap">
     <div class="login-box">
-      <img src="../assets/images/logo.png" alt="">
-      <h1 class="heading">{{ $t('projectTitle') }}</h1>
+      <img src="../assets/images/balkanfun-logo-small.png" alt="Balkanfun logo">
+      <h1 class="heading">{{ $t('signIn') }}</h1>
       <el-form :model="account" :rules="rules" ref="validateForm">
         <el-form-item prop="username">
           <el-input v-model="account.username" :placeholder="$t('username')"></el-input>
@@ -69,13 +69,13 @@
               // this.$store.commit('$vuexSetUserInfo')
               this.$router.push('/')
             }).catch((err) => {
-              this.$router.push('/demo/form')
+              this.$router.push('/error')
               this.$message.error(err.msg)
             }).fin(() => {
               this.isLoading = false
             })
           } else {
-            this.$router.push('/demo/form')
+            this.$router.push('/login')
             return false
           }
         })

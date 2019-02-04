@@ -8,9 +8,9 @@ body,
 .page-module {
   padding: 0 0 20px 0;
   position: absolute;
-  left: $sidenav-width;
+  left: 0;
   top: $header-height;
-  width: calc(100% - 200px);
+  width: 100%;
 }
 
 .module-header {
