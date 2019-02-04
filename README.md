@@ -1,182 +1,43 @@
-# balkanfun-client
+<p align="center"><a href="https://balkanfun.ro" target="_blank" rel="noopener noreferrer"><img width="100" src="http://balkanfun.ro/wp-content/uploads/2018/05/Asset-55.png" alt="Balkanfun Logo"></a></p>
 
-# Balkanfun Client Web App
-Mobile-first VueJS web app for a local travel agency 🛳
-
-
-## VueJS Client Documantation
+<h1 align="center">Balkanfun Client Web App</h2>
+<h3 align="center">Mobile-first VueJS web app for a local travel agency 🛳</h4>
 
 
-# Repository URL
 
-[GitHub](https://github.com/kyokidG/balkanfun-client)
-
+## Links
+[GitHub repo](https://github.com/kyokidG/balkanfun-client)
+[Documentation](https://docs.google.com/document/d/1J--ZhK2o1zj4kpQjhOg8wqE8UVanPjT-0nSEZSdTwc4/edit?usp=sharing)
 Live Demo (coming soon)
 
-
-# Quickstart {#quickstart}
+> For a comprehensive understanding of all the capabilities of the app - *detailed installation steps, design system, tech stack, features, etc* - please read the [documentation](https://docs.google.com/document/d/1J--ZhK2o1zj4kpQjhOg8wqE8UVanPjT-0nSEZSdTwc4/edit?usp=sharing) 👀
 
 
 ## Prerequisites {#prerequisites}
-
-
-
 *   Node >= 8
 
-
-## Start  {#start}
-
-
-
+## Quickstart 
 *   Clone or download this repository
-*   Enter your local directory, and install dependencies:
-
-
+```
+git clone git@github.com:kyokidG/balkanfun-client.git
+```
+*   Enter your local directory and install dependencies:
 ```
 yarn
 ```
-
-
-
-## Develop 👨‍💻 {#develop-👨‍💻}
-
-
-
-*   serve with hot reload at localhost:8010
-
-
+*   Run local dev environment (hot-reloading enabled at localhost:8010)
 ```
 npm run dev
 ```
-
-
-
-## Build for production 🚀 {#build-for-production-🚀}
-
-
-
-*   build for production with minification
-
-
+* Build for production with minification 🚀 
 ```
 npm run build
 ```
 
+## UI Components
 
+[ElementUI](https://element.eleme.io/#/en-US) does the heavy lifting here. Take a look over their documentation, it's pretty well-written 📚
 
-# Design {#design}
+## Contact
 
-
-## Colors {#colors}
-
-
-<table>
-  <tr>
-   <td>Primary color: #FCD43A
-   </td>
-   <td>Secodary color: #08c
-   </td>
-  </tr>
-  <tr>
-   <td>White-1: #F2F6FC
-   </td>
-   <td>Success: #67C23A
-   </td>
-  </tr>
-  <tr>
-   <td>White-2: #DCDFE6
-   </td>
-   <td>Warning: #E6A23C
-   </td>
-  </tr>
-  <tr>
-   <td>Dark-1: #C0C4CC
-   </td>
-   <td>Danger: #F56C6C
-   </td>
-  </tr>
-  <tr>
-   <td>Dark-2: #303133
-   </td>
-   <td>Info: #909399
-   </td>
-  </tr>
-</table>
-
-
-
-## Typography {#typography}
-
-
-### Fonts {#fonts}
-
-Primary font: [Open Sans](https://fonts.google.com/specimen/Open+Sans) (sans-serif)
-
-Secondary font: [Roboto Slab](https://fonts.google.com/specimen/Roboto+Slab) (serif)
-
-
-```
-Tertiary font: Source Code Pro (monospace)
-```
-
-
-
-### Weights {#weights}
-
-Light: 300
-
-Normal: 400
-
-**Bold: 700**
-
-
-### Sizes {#sizes}
-
-H1: 40px
-
-H2: 32px
-
-H3: 28px
-
-H4: 24px
-
-H5: 20px
-
-H6: 16px
-
-
-## UI Components {#ui-components}
-
-[ElementUI](https://element.eleme.io/#/en-US) does the heavy lifting here. Take a look over their documentation, it's pretty comprehensive 📚
-
-
-## Themes {#themes}
-
-I've used **<code>theme-chalk</code></strong> built-in theme from ElementUI, but it supports easy [interchangeable themes](https://element.eleme.io/#/en-US/component/custom-theme) - just write some SASS and you're good to go.
-
-
-# Technical details  {#technical-details}
-
-Modern web client app built with VueJS 2.5
-
-
-## Features {#features}
-
-
-
-*   State management with vuex
-*   Routing with vue-router
-*   API Calls Layer template implemented, with out-of-the-box plug-and-play capabilities
-*   User notifications built-in, just import and trigger them anywhere
-*   Login page (/login)
-*   Register page (/register)
-*   [Docker](https://www.docker.com/) integration
-
-
-## Other small, but important notes {#other-small-but-important-notes}
-
-
-
-*   Internationalization available in 2 languages (ro+en), but easy scalable with [vue-i18n@5.x](https://github.com/kazupon/vue-i18n)
-*   Built-in highly performant CSS [transitions](https://element.eleme.io/#/en-US/component/transition)
-*   bla bla
+You need a custom modern, fast and easy scalable web application for your business? Email me at bratageorge[at]gmail.com and we can schedule a meeting. Happy coding!  
