@@ -4,8 +4,7 @@
     <div class="frame-content">
       <side-nav></side-nav>
       <main @click="onHideMenuClick">
-                  dfafad<h3>dasda</h3>
-
+        <router-view></router-view>
       </main>
     </div>
   </div>
@@ -17,9 +16,9 @@ import HeaderComponent from '@views/partials/Header'
 import RoutesMapConfig from '@router/routes'
 
 export default{
-  name: 'OffersPage',
-  props: {
+  name: 'PageFrame',
 
+  props: {
   },
 
   data () {

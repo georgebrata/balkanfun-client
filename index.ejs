@@ -41,6 +41,7 @@
         if (file.match(/\.(css)$/)) { %>
     <link rel="<%= chunk.initial ? 'preload' : 'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
     <% }}} %>
+  <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
 </head>
 
 <body>

@@ -1,82 +1,58 @@
 <template>
-  <div class="page-frame">
-    <header-component></header-component>
-    <div class="frame-content">
-      <side-nav></side-nav>
-      <h1>FAQ</h1>
-      <h1>FAQ</h1>
-      <h1>FAQ</h1>
-      <main @click="onHideMenuClick">
-        <router-view></router-view>
-      </main>
+  <section class="page-module">
+    <hero-image></hero-image>
+    <div class="module-content">
+      <el-row class="mb2">
+        <el-col :span="22" :offset="1">
+          <h1>Intrebari frecvente</h1>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="22" :offset="1">
+          <el-collapse v-model="activeName" accordion>
+            <el-collapse-item title="Ce faci in timpul zilei?" name="1">
+              <div>Cuvintele cheie care definesc BalkanFun sunt “distracția” și “libertatea”. Plajele nisipoase din Kavos, priveliștile pline de soare de pe insula Zakynthos, dar și toate celelalte destinații pline de surprize te vor încânta.</div>
+              <div>Tu și prietenii tăi vă veți putea bucura de party-urile organizate pe plajă în timpul zilei, de excursii în largul Mării Ionice, iar seara, cluburile și petrecerile care nu înceteaza până in zorii zilei vă așteaptă.</div>
+            </el-collapse-item>
+            <el-collapse-item title="Cine merge in excursie?" name="2">
+              <div>Balkan Fun este de 10 ani alegerea numărul unu pentru tineri din țări precum Serbia, Macedonia, Bulgaria, Croația sau Bosnia. Așadar, dacă vrei să îți faci prieteni noi și să te distrezi cu mii de alți tineri pe insulă noi suntem alegerea potrivită.</div>
+            </el-collapse-item>
+            <el-collapse-item title="Ce fel de partyuri sunt? Cat costa?" name="3">
+              <div>Îți punem la dispoziție o gamă variată de petreceri care dureaza până în zori. Atât prezența la day party-urile private de pe plajele din Zakynthos, Kavos sau Kefalonia, dar și cele de noapte din cluburile ce dispun de distracție nelimitată este obligatorie!</div>
+              <div>De ce?</div> 
+              <div>Deoarece participarea la acestea îți este asigurată odată cu achiziționarea pachetului oferit de noi.</div>
+            </el-collapse-item>
+            <el-collapse-item title="Cati bani sa ai la tine?" name="4">
+              <div>Nu te îngrijora pentru bugetul de vacanță. 7 zile de party-uri pe insula nu îți vor lua mai mulți bani decât o vacanță medie pe litoralul nostru. Cu siguranță vei economisi mai mulți bani decât un sejur la Mamaia.</div>
+            </el-collapse-item>
+          </el-collapse>
+        </el-col>
+      </el-row>
     </div>
-  </div>
+  </section>
+
 </template>
 
 <script>
-import SideNav from "@views/partials/SideNav";
-import HeaderComponent from "@views/partials/Header";
-import Divider from "@views/partials/Divider";
 import RoutesMapConfig from "@router/routes";
+import Divider from "../partials/Divider"
+import HeroImage from "../partials/HeroImage"
+
 
 export default {
-  name: 'FAQPage',
+  name: "FAQPage",
   props: {},
-
   data() {
-    return {};
+    return {
+      activeName: "1",
+    };
   },
-
-  created() {
-    this.$getUserInfo();
-
-    this.initMenuList();
-  },
-
   components: {
-    SideNav,
-    HeaderComponent,
-    Divider
-  },
-
-  methods: {
-    initMenuList() {
-      const routesConf = this.$_.cloneDeep(RoutesMapConfig);
-      const menuList = this.filterNodeByName(routesConf, "isHideInMenu");
-      this.$setMenuList(menuList);
-    },
-
-    filterNodeByName(source, name) {
-      let result = source.filter(function cFilter(item) {
-        if (!item[name]) {
-          item.children && (item.children = item.children.filter(cFilter));
-          return true;
-        } else {
-          return false;
-        }
-      });
-      return result;
-    },
-
-    onHideMenuClick() {
-      document.getElementById("app").className = "";
-    }
+    Divider,
+    HeroImage
   }
 };
 </script>
 
 <style lang="scss">
-.page-frame {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  .frame-content {
-    flex: 1;
-    display: flex;
-  }
-  main {
-    flex: 1;
-  }
-}
 </style>

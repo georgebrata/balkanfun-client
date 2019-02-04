@@ -8,8 +8,6 @@
       </router-link>
     </h1>
 
-
-
     <!-- mobile menu toggle -->
     <a href="javascript:;" class="menu hidden-sm-and-up" @click="onToggleMenuClick" >
       <span></span>
@@ -17,24 +15,27 @@
 
     <el-menu class="el-menu-demo float-right hidden-sm-and-down" mode="horizontal" @select="handleSelect">
       <el-menu-item index="1">
-        <router-link to="/">Acasa</router-link>
+        <router-link to='/'>Acasa</router-link>
       </el-menu-item>
       <el-submenu index="2">
         <template slot="title">Oferte</template>
         <el-menu-item index="2.1">
-          <router-link to="/offer/offer1">Oferta 1</router-link>
+          <router-link to="/offers/offer1">Oferta 1</router-link>
         </el-menu-item>
         <el-menu-item index="2.2">
-          <router-link to="/offer/offer2">Oferta 2</router-link>
+          <router-link to="/offers/offer2">Oferta 2</router-link>
         </el-menu-item>
       </el-submenu>
       <el-menu-item index="3">
-        <router-link to="/gallery">Galerie</router-link>
+        <router-link to="/faq">Intrebari frecvente</router-link>
       </el-menu-item>
       <el-menu-item index="4">
-        <router-link to="/about-us">Despre noi</router-link>
+        <router-link to="/gallery">Galerie</router-link>
       </el-menu-item>
       <el-menu-item index="5">
+        <router-link to="/about-us">Despre noi</router-link>
+      </el-menu-item>
+      <el-menu-item index="6">
         <router-link to="/contact">Contact</router-link>
       </el-menu-item>
     </el-menu>
@@ -104,12 +105,14 @@ export default {
 @import "./../../assets/scss/mixins.scss";
 
 #app .header {
+  box-sizing: content-box;
   position: fixed;
   z-index: 9;
   height: $header-height;
   width: 100%;
   min-width: 320px;
   background-color: $header-bg;
+  border-bottom: solid 1px #e6e6e6;
   @include clearfix();
 
   a {
@@ -247,5 +250,8 @@ export default {
       }
     }
   }
+}
+.el-menu-demo {
+  border-bottom: 0 !important;
 }
 </style>

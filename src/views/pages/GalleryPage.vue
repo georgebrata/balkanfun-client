@@ -1,78 +1,37 @@
 <template>
-  <div class="page-frame">
-    <header-component></header-component>
-    <div class="frame-content">
-      <side-nav></side-nav>
-      <main @click="onHideMenuClick">
-        <router-view >
-        </router-view>
-      </main>
+  <section class="page-module">
+    <hero-image title="Galerie"></hero-image>
+    <div class="module-content">
+      <el-row class="mb2">
+        <el-col :span="22" :offset="1">
+          <h1>zz</h1>
+        </el-col>
+      </el-row>
     </div>
-  </div>
+  </section>
+
 </template>
 
 <script>
-import SideNav from "@views/partials/SideNav";
-import HeaderComponent from "@views/partials/Header";
 import RoutesMapConfig from "@router/routes";
+import Divider from "../partials/Divider"
+import HeroImage from "../partials/HeroImage"
+
 
 export default {
   name: "GalleryPage",
   props: {},
-
   data() {
-    return {};
+    return {
+      activeName: "1",
+    };
   },
-
-  created() {
-    this.$getUserInfo();
-
-    this.initMenuList();
-  },
-
   components: {
-    SideNav,
-    HeaderComponent,
-  },
-
-  methods: {
-    initMenuList() {
-      const routesConf = this.$_.cloneDeep(RoutesMapConfig);
-      const menuList = this.filterNodeByName(routesConf, "isHideInMenu");
-      this.$setMenuList(menuList);
-    },
-
-    filterNodeByName(source, name) {
-      let result = source.filter(function cFilter(item) {
-        if (!item[name]) {
-          item.children && (item.children = item.children.filter(cFilter));
-          return true;
-        } else {
-          return false;
-        }
-      });
-      return result;
-    },
-
-    onHideMenuClick() {
-      document.getElementById("app").className = "";
-    },
-  },
+    Divider,
+    HeroImage
+  }
 };
 </script>
 
 <style lang="scss">
-.page-frame {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  .frame-content {
-    flex: 1;
-    display: flex;
-  }
-  main {
-    flex: 1;
-  }
-}
 </style>

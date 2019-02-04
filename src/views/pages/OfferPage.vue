@@ -1,6 +1,6 @@
 <template>
   <div class="page-frame">
-    <h1>Despre noi</h1>
+    <h1>Oferta X</h1>
   </div>
 </template>
 
@@ -8,16 +8,12 @@
 import RoutesMapConfig from "@router/routes";
 
 export default {
-  name: "AboutUsPage",
+  name: "OfferPage",
   props: {},
 
   data() {
     return {};
   },
-
-  components: {},
-
-  methods: {},
 };
 </script>
 

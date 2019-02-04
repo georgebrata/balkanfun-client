@@ -1,6 +1,5 @@
 <template>
   <div class="divider">
-
   </div>
 </template>
 
@@ -10,15 +9,18 @@ import Cookies from "js-cookie";
 
 export default {
   name: "divider",
-
-  data() {
-
+  data: {
+    styleObject: {
+//      marginTop: this.props.height,
+    },
   },
-
   components: {},
 
-  computed: {
-
+  props: {
+    height: {
+      type: Number,
+      default: 50,
+    },
   },
 
   methods: {},
@@ -27,7 +29,6 @@ export default {
 
 <style type="text/css" lang="scss">
 .divider {
-  margin-top: 100px;
+  margin-top: 50px;
 }
-
 </style>

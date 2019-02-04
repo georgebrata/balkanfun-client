@@ -25,8 +25,8 @@ export default [
     component: resolve => require(['@views/ErrorPage'], resolve)
   },
   {
-    path: '',
-    redirect: '/'
+    path: '/',
+    redirect: '/acasa'
   },
   {
     path: '*',
@@ -37,3 +37,4 @@ export default [
     component: NotFound
   }
 ]
+
