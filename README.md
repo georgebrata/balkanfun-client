@@ -7,7 +7,9 @@
 
 ## Links
 [GitHub repo](https://github.com/kyokidG/balkanfun-client)
+
 [Documentation](https://docs.google.com/document/d/1J--ZhK2o1zj4kpQjhOg8wqE8UVanPjT-0nSEZSdTwc4/edit?usp=sharing)
+
 Live Demo (coming soon)
 
 > For a comprehensive understanding of all the capabilities of the app - *detailed installation steps, design system, tech stack, features, etc* - please read the [documentation](https://docs.google.com/document/d/1J--ZhK2o1zj4kpQjhOg8wqE8UVanPjT-0nSEZSdTwc4/edit?usp=sharing) 👀
