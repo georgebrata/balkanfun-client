@@ -65,7 +65,6 @@ export default {
 
 <style type="text/scss" lang="scss">
 footer {
-  position: fixed;
   bottom: 0;
   height: auto;
   min-height: 300px;

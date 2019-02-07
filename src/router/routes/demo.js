@@ -1,5 +1,3 @@
-import OffersListPage from '@views/pages/OffersListPage'
-import OfferPage from '@views/pages/OfferPage'
 import GalleryPage from '@views/pages/GalleryPage'
 import FAQPage from '@views/pages/FAQPage'
 import ContactPage from '@views/pages/ContactPage'
@@ -36,7 +34,8 @@ export default [{
         title: $utils.titleLang('Oferte'),
         ignoreAuth: true
       },
-      component: resolve => require(['@views/pages/OffersListPage'], resolve),
+      component: resolve => require(['@views/pages/OffersPage'], resolve),
+      /*
       children: [
         {
           path: 'offer1',
@@ -58,7 +57,7 @@ export default [{
           component: resolve => require(['@views/pages/OfferPage'], resolve),
 
         }
-      ]
+      ]*/
     },
     {
       path: 'gallery',

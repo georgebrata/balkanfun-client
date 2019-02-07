@@ -18,12 +18,12 @@
         <router-link to='/'>Acasa</router-link>
       </el-menu-item>
       <el-submenu index="2">
-        <template slot="title">Oferte</template>
+        <template slot="title"><router-link to="/offers">Oferte</router-link></template>
         <el-menu-item index="2.1">
-          <router-link to="/offers/offer1">Oferta 1</router-link>
+          <router-link to="/offers?filter=offer1">Oferta 1</router-link>
         </el-menu-item>
         <el-menu-item index="2.2">
-          <router-link to="/offers/offer2">Oferta 2</router-link>
+          <router-link to="/offers?filter=offer2">Oferta 2</router-link>
         </el-menu-item>
       </el-submenu>
       <el-menu-item index="3">
@@ -103,6 +103,9 @@ export default {
 <style type="text/css" lang="scss">
 @import "./../../assets/scss/variables.scss";
 @import "./../../assets/scss/mixins.scss";
+.el-menu-item a {
+  color: #909399;
+}
 
 #app .header {
   box-sizing: content-box;
@@ -116,6 +119,7 @@ export default {
   @include clearfix();
 
   a {
+    color: #909399;
     &:hover,
     &:focus {
       text-decoration: none;
