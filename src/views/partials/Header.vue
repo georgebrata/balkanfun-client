@@ -1,9 +1,9 @@
 <template>
   <header class="header mobile-header">
-    <div class="pre-header">
+    <div class="pre-header xs-hide sm-hide">
       <div class="max-width-header">
         <div class="street"><i class="el-icon-location mr2"></i>Tipografiei nr.8, Cluj-Napoca</div>
-        <div class="number"><i class="el-icon-phone mr2"></i> 0741 653 259 /  Fax:  0264 432 600</div>
+        <div class="number"><i class="el-icon-phone mr2"></i> <a href="tel:+40741653259">0741 653 259 /  Fax:  0264 432 600</a></div>
         <div class="working-time"><i class="el-icon-time mr2"></i>Luni-Vineri 10-18h</div>
       </div>
     </div>
@@ -145,12 +145,6 @@ export default {
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .pre-header {
-      display: none;
-  }
-}
-
 #app .header {
   box-sizing: content-box;
   position: fixed;
@@ -163,7 +157,7 @@ export default {
   @include clearfix();
 
   a {
-    color: #909399;
+    color: white;
     &:hover,
     &:focus {
       text-decoration: none;
@@ -301,5 +295,8 @@ export default {
 }
 .el-menu-demo {
   border-bottom: 0 !important;
+}
+.el-menu-item a, .el-submenu__title a {
+  color: #909399 !important;
 }
 </style>

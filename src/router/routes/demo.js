@@ -60,8 +60,18 @@ export default [{
       ]*/
     },
     {
+      path: 'trip',
+      fullpath: '/trip',
+      isHideInMenu: false,
+      meta: {
+        title: $utils.titleLang('Galerie'),
+        ignoreAuth: true
+      },
+      component: resolve => require(['@views/pages/GalleryPage'], resolve)
+    },
+    {
       path: 'gallery',
-      fullpath: '/galerie',
+      fullpath: '/gallery',
       isHideInMenu: false,
       meta: {
         title: $utils.titleLang('Galerie'),

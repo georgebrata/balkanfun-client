@@ -3,12 +3,13 @@
     <hero-image title="Galerie"></hero-image>
     <div class="module-content">
       <el-row class="mb2">
-        <el-col :span="4" :offset="10">
-            <el-tabs tab-position="top" >
-              <el-tab-pane label="User">User</el-tab-pane>
-              <el-tab-pane label="Config">Config</el-tab-pane>
-            </el-tabs>
+        <el-col :span="20" :offset="2" class="mt2 mb2">
+            <h1>Galerie video</h1>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
         </el-col>
+
       </el-row>
     </div>
     <balkanfun-footer></balkanfun-footer>
