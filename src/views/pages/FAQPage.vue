@@ -19,7 +19,7 @@
             </el-collapse-item>
             <el-collapse-item title="Ce fel de partyuri sunt? Cat costa?" name="3">
               <div>Îți punem la dispoziție o gamă variată de petreceri care dureaza până în zori. Atât prezența la day party-urile private de pe plajele din Zakynthos, Kavos sau Kefalonia, dar și cele de noapte din cluburile ce dispun de distracție nelimitată este obligatorie!</div>
-              <div>De ce?</div> 
+              <div>De ce?</div>
               <div>Deoarece participarea la acestea îți este asigurată odată cu achiziționarea pachetului oferit de noi.</div>
             </el-collapse-item>
             <el-collapse-item title="Cati bani sa ai la tine?" name="4">

@@ -1,0 +1,44 @@
+[
+  {
+    "title": "oferta 1",
+    "price": "200",
+    "imgSrc": "http://balkanfun.ro/wp-content/uploads/2018/05/INSTAGRAM-CORFU-10.jpg",
+    "url": "https://example.com",
+    "filter": "offer1",
+    "benefits": ["beneficiu 1", "beneficiu 4", "beneficiu 3"]
+  },
+  {
+    "title": "oferta 2",
+    "price": "199",
+    "imgSrc": "http://balkanfun.ro/wp-content/uploads/2018/05/CORFU.jpg",
+    "url": "https://example.com",
+    "filter": "offer1",
+    "benefits": ["beneficiu 1", "beneficiu 4", "beneficiu 3"]
+  },
+  {
+    "title": "oferta 3",
+    "price": "0",
+    "imgSrc": "http://balkanfun.ro/wp-content/uploads/2018/05/CORFU.jpg",
+    "url": "https://example.com",
+    "filter": "offer1",
+    "benefits": ["beneficiu 1", "beneficiu 4", "beneficiu 3"]
+  },
+  {
+    "title": "oferta 1",
+    "price": "10000",
+    "imgSrc": "http://balkanfun.ro/wp-content/uploads/2018/05/INSTAGRAM-CORFU-10.jpg",
+    "url": "https://example.com",
+    "filter": "offer1",
+    "benefits": ["beneficiu 1", "beneficiu 4", "beneficiu 3"],
+    "disclaimer": "Disclaimer if needed"
+  },
+  {
+    "title": "oferta 1",
+    "price": "99,9",
+    "imgSrc": "http://balkanfun.ro/wp-content/uploads/2018/05/INSTAGRAM-CORFU-10.jpg",
+    "url": "https://example.com",
+    "filter": "offer2",
+    "benefits": ["beneficiu 1", "beneficiu 4", "beneficiu 3"],
+    "disclaimer": "Disclaimer foarte foarte foarte foarte foarte foarte foarte foarte lung care trece pe randul 2"
+  }
+]
