@@ -78,4 +78,12 @@ export default {
 </script>
 
 <style lang="scss">
+.el-collapse-item__header {
+  font-weight: 600;
+  font-size: 18px;
+
+  &.is-active {
+    color: #793489;
+  } 
+}
 </style>

@@ -42,16 +42,12 @@ import BalkanfunFooter from "../partials/BalkanfunFooter";
 export default {
   name: "AboutUsPage",
   props: {},
-  data() {
-    return {
-      activeName: "1",
-    };
-  },
+  data: {},
   components: {
     Divider,
     HeroImage,
     BalkanfunFooter,
-  },
+  }
 };
 </script>
 

@@ -1,10 +1,17 @@
 <template>
   <header class="header mobile-header">
-
+    <div class="pre-header">
+      <div class="max-width-header">
+        <div class="street"><i class="el-icon-location mr2"></i>Tipografiei nr.8, Cluj-Napoca</div>
+        <div class="number"><i class="el-icon-phone mr2"></i> 0741 653 259 /  Fax:  0264 432 600</div>
+        <div class="working-time"><i class="el-icon-time mr2"></i>Luni-Vineri 10-18h</div>
+      </div>
+    </div>
     <h1 class="logo">
       <router-link to="/">
         <img src="../../assets/images/balkanfun-logo-small.png" alt="Balkanfun LOGO">
-        <span class="title">{{ $t('projectTitle') }}</span>
+        <!--<span class="title">{{ $t('projectTitle') }}</span>-->
+        <b class="title">BALKAN<span style="color: #793489">FUN</span></b>
       </router-link>
     </h1>
 
@@ -107,6 +114,43 @@ export default {
   color: #909399;
 }
 
+.pre-header {
+  background: #2C6FA6;
+  height: $pre-header-height;
+  color: #fff;
+  font-size: 14px;
+  line-height: $pre-header-height;
+  i {
+    color: yellow;
+  }
+}
+
+.max-width-header {
+  max-width: 65%;
+  text-align: center;
+  margin: 0 auto;
+  .street {
+    float: left;
+    text-align: left;
+    width: 33.3%;
+  }
+  .number {
+    text-align: center;
+    width: 33.3%;
+    float: left;
+  }
+  .working-time {
+    text-align: right;
+    float: right;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .pre-header {
+      display: none;
+  }
+}
+
 #app .header {
   box-sizing: content-box;
   position: fixed;
@@ -187,7 +231,7 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 20px 15px 10px;
+  padding: 35px 15px 10px;
   width: 60px;
   height: 60px;
 }
