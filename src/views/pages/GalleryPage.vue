@@ -8,14 +8,15 @@
         </el-col>
       </el-row>
     </div>
+    <balkanfun-footer></balkanfun-footer>
   </section>
-
 </template>
 
 <script>
 import RoutesMapConfig from "@router/routes";
 import Divider from "../partials/Divider"
 import HeroImage from "../partials/HeroImage"
+import BalkanfunFooter from "../partials/BalkanfunFooter";
 
 
 export default {
@@ -28,7 +29,8 @@ export default {
   },
   components: {
     Divider,
-    HeroImage
+    HeroImage,
+    BalkanfunFooter
   }
 };
 </script>

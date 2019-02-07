@@ -72,16 +72,19 @@
         </div>
       </div>
     </div>
+    <balkanfun-footer></balkanfun-footer>
   </section>
 </template>
 
 <script>
 import RoutesMapConfig from "@router/routes";
+import BalkanfunFooter from "../partials/BalkanfunFooter";
+
 
 export default {
   name: "ConatctPage",
 
-  components: {},
+  components: {BalkanfunFooter},
 
   props: {},
 

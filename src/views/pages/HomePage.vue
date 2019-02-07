@@ -12,17 +12,19 @@
         </el-col>
       </el-row>
     </div>
+    <balkanfun-footer></balkanfun-footer>
   </section>
 </template>
 
 <script>
 import RoutesMapConfig from "@router/routes";
 import Divider from "../partials/Divider";
+import BalkanfunFooter from "../partials/BalkanfunFooter";
 
 export default {
   name: "HomePage",
   props: {},
-  components: {Divider},
+  components: { Divider, BalkanfunFooter },
   data() {
     return {};
   },

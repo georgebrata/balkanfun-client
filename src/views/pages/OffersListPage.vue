@@ -20,6 +20,7 @@
         </el-col>
       </el-row>
     </div>
+    <!--<balkanfun-footer></balkanfun-footer>-->
   </section>
 
 </template>
@@ -28,6 +29,7 @@
 import RoutesMapConfig from "@router/routes";
 import Divider from "../partials/Divider";
 import HeroImage from "../partials/HeroImage";
+import BalkanfunFooter from "../partials/BalkanfunFooter";
 import OfferCard from "../components/OfferCard";
 
 import offers from "../../data/offers";
@@ -45,6 +47,7 @@ export default {
     Divider,
     HeroImage,
     OfferCard,
+    BalkanfunFooter
   },
 };
 </script>
