@@ -1,10 +1,10 @@
-import OffersListPage from '@views/pages/OffersListPage'
-import OfferPage from '@views/pages/OfferPage'
 import GalleryPage from '@views/pages/GalleryPage'
 import FAQPage from '@views/pages/FAQPage'
 import ContactPage from '@views/pages/ContactPage'
 import AboutUsPage from '@views/pages/AboutUsPage'
 import HomePage from '@views/pages/HomePage'
+import TripPage from '@views/pages/TripPage'
+import CheckoutPage from '@views/pages/CheckoutPage'
 
 import PageFrame from '@views/partials/PageFrame'
 import { $utils } from '@helper'
@@ -36,33 +36,31 @@ export default [{
         title: $utils.titleLang('Oferte'),
         ignoreAuth: true
       },
-      component: resolve => require(['@views/pages/OffersListPage'], resolve),
-      children: [
-        {
-          path: 'offer1',
-          fullpath: '/offers/offer1',
-          isHideInMenu: false,
-          meta: {
-            title: $utils.titleLang('Oferta 1'),
-            ignoreAuth: true
-          },
-          component: resolve => require(['@views/pages/OfferPage'], resolve)
-        },
-        {
-          path: 'offer2',
-          fullpath: '/offers/offer2',
-          meta: {
-            title: $utils.titleLang('Oferta 1'),
-            ignoreAuth: true
-          },
-          component: resolve => require(['@views/pages/OfferPage'], resolve),
-
-        }
-      ]
+      component: resolve => require(['@views/pages/OffersPage'], resolve)
+    },
+    {
+      path: 'trip',
+      fullpath: '/trip',
+      isHideInMenu: false,
+      meta: {
+        title: $utils.titleLang('Trip'),
+        ignoreAuth: true
+      },
+      component: resolve => require(['@views/pages/TripPage'], resolve)
+    },
+    {
+      path: 'checkout',
+      fullpath: '/checkout',
+      isHideInMenu: false,
+      meta: {
+        title: $utils.titleLang('Checkout'),
+        ignoreAuth: true
+      },
+      component: resolve => require(['@views/pages/CheckoutPage'], resolve)
     },
     {
       path: 'gallery',
-      fullpath: '/galerie',
+      fullpath: '/gallery',
       isHideInMenu: false,
       meta: {
         title: $utils.titleLang('Galerie'),

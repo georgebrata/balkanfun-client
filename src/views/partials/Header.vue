@@ -1,10 +1,17 @@
 <template>
   <header class="header mobile-header">
-
+    <div class="pre-header xs-hide sm-hide">
+      <div class="max-width-header">
+        <div class="street"><i class="el-icon-location mr2"></i>Tipografiei nr.8, Cluj-Napoca</div>
+        <div class="number"><i class="el-icon-phone mr2"></i> <a href="tel:+40741653259">0741 653 259 /  Fax:  0264 432 600</a></div>
+        <div class="working-time"><i class="el-icon-time mr2"></i>Luni-Vineri 10-18h</div>
+      </div>
+    </div>
     <h1 class="logo">
       <router-link to="/">
         <img src="../../assets/images/balkanfun-logo-small.png" alt="Balkanfun LOGO">
-        <span class="title">{{ $t('projectTitle') }}</span>
+        <!--<span class="title">{{ $t('projectTitle') }}</span>-->
+        <b class="title">BALKAN<span style="color: #793489">FUN</span></b>
       </router-link>
     </h1>
 
@@ -18,12 +25,12 @@
         <router-link to='/'>Acasa</router-link>
       </el-menu-item>
       <el-submenu index="2">
-        <template slot="title">Oferte</template>
+        <template slot="title"><router-link to="/offers">Oferte</router-link></template>
         <el-menu-item index="2.1">
-          <router-link to="/offers/offer1">Oferta 1</router-link>
+          <router-link to="/offers?filter=offer1">Oferta 1</router-link>
         </el-menu-item>
         <el-menu-item index="2.2">
-          <router-link to="/offers/offer2">Oferta 2</router-link>
+          <router-link to="/offers?filter=offer2">Oferta 2</router-link>
         </el-menu-item>
       </el-submenu>
       <el-menu-item index="3">
@@ -103,6 +110,40 @@ export default {
 <style type="text/css" lang="scss">
 @import "./../../assets/scss/variables.scss";
 @import "./../../assets/scss/mixins.scss";
+.el-menu-item a {
+  color: #909399;
+}
+
+.pre-header {
+  background: #2C6FA6;
+  height: $pre-header-height;
+  color: #fff;
+  font-size: 14px;
+  line-height: $pre-header-height;
+  i {
+    color: yellow;
+  }
+}
+
+.max-width-header {
+  max-width: 65%;
+  text-align: center;
+  margin: 0 auto;
+  .street {
+    float: left;
+    text-align: left;
+    width: 33.3%;
+  }
+  .number {
+    text-align: center;
+    width: 33.3%;
+    float: left;
+  }
+  .working-time {
+    text-align: right;
+    float: right;
+  }
+}
 
 #app .header {
   box-sizing: content-box;
@@ -116,6 +157,7 @@ export default {
   @include clearfix();
 
   a {
+    color: white;
     &:hover,
     &:focus {
       text-decoration: none;
@@ -183,7 +225,7 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 20px 15px 10px;
+  padding: 35px 15px 10px;
   width: 60px;
   height: 60px;
 }
@@ -253,5 +295,8 @@ export default {
 }
 .el-menu-demo {
   border-bottom: 0 !important;
+}
+.el-menu-item a, .el-submenu__title a {
+  color: #909399 !important;
 }
 </style>

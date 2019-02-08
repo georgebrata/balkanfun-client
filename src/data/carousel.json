@@ -1,0 +1,17 @@
+[
+  {
+    "title": "oferta 1",
+    "imgSrc": "http://balkanfun.ro/wp-content/uploads/bfi_thumb/750x400-o2vvgqwrdy5gfk5sdb6j46fvwciw2cxkgd1trepw9s.jpg",
+    "url": "https://example.com"
+  },
+  {
+    "title": "oferta 2",
+    "imgSrc": "http://balkanfun.ro/wp-content/uploads/bfi_thumb/CORFU-slider-nz742g83qzbbdsfpz5y3hho2zhyw7jf5av0p539rc0.jpg",
+    "url": "https://example.com"
+  },
+  {
+    "title": "oferta 3",
+    "imgSrc": "http://balkanfun.ro/wp-content/uploads/bfi_thumb/ZAKYNTHOS-slider-nz73jmigvfjkuxs4wj031qoqoor91roodonm4l6ly8.jpg",
+    "url": "https://example.com"
+  }
+]
