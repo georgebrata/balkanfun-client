@@ -43,7 +43,6 @@ export default {
   props: {},
   components: { BalkanfunFooter, OffersList },
   computed: {
-
   },
   methods: {
     getBackgroundImage(item) {

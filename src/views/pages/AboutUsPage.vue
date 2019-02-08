@@ -53,6 +53,7 @@ export default {
 
 <style lang="scss">
 p {
-  font-size: 20px;
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 </style>
