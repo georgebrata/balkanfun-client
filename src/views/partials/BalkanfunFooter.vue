@@ -38,13 +38,13 @@
           </el-row>
           <el-row :gutter="24" class="mt4 w-100">
             <el-col :sm="24">
-              <h2 class="el-icon-location mb2"><a class="ml2" href="tel:">Tipografiei, nr 9, Cluj-Napoca</a></h2>
+              <h2 class="el-icon-location mb2"><a class="ml2">Tipografiei, nr 9, Cluj-Napoca</a></h2>
             </el-col>
             <el-col :sm="24" >
               <h2 class="el-icon-phone mb2"><a class="ml2" href="tel:+40741653259">0741 653 259</a></h2>
             </el-col>
             <el-col :sm="24">
-              <h2 class="el-icon-printer mb2"><a class="ml2" href="tel:">0264 432 600</a></h2>
+              <h2 class="el-icon-printer mb2"><a class="ml2">0264 432 600</a></h2>
             </el-col>
           </el-row>
         </el-col>

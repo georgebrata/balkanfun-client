@@ -4,16 +4,44 @@
       <el-row>
         <el-col :span="20" :offset="2">
           <el-row>
-            <el-col :span="24">
+            <el-col :span="24" class="text-center">
                 <h1>{{offer.title}}</h1>
             </el-col>
           </el-row>
-          <el-row>
-            <el-col :span="24">
-                <br>
-                <h1>TABEL CAMERE</h1>
-                <el-rate v-model="offer.locations[0].stars" disabled></el-rate>
-                <br>
+          <el-row class="mb3">
+            <el-col :span="24" v-for="location in offer.locations" class="mt2">
+                <br><h1>{{location.title}}</h1><br>
+                <el-rate v-model="location.stars" disabled></el-rate>
+                <el-table :data="location.prices" style="width: 900px;">
+                  <el-table-column
+                    prop="period"
+                    label="Perioada"
+                    width="200">
+                  </el-table-column>
+                  <el-table-column
+                    prop="price1"
+                    label="Camera 1/2"
+                    width="150">
+                  </el-table-column>
+                  <el-table-column
+                    prop="price2"
+                    label="Camera 1/3"
+                    width="150">
+                  </el-table-column>
+                  <el-table-column
+                    prop="price3"
+                    label="Camera 1/4"
+                    width="150">
+                  </el-table-column>
+                  <el-table-column
+                    fixed="right"
+                    label=""
+                    width="120">
+                    <template slot-scope="scope" class="text-center">
+                      <el-button @click="handleClick" type="primary">REZERVA</el-button>
+                    </template>
+                  </el-table-column>
+                </el-table>
             </el-col>
           </el-row>
           <el-row>

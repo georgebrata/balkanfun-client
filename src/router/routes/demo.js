@@ -4,6 +4,7 @@ import ContactPage from '@views/pages/ContactPage'
 import AboutUsPage from '@views/pages/AboutUsPage'
 import HomePage from '@views/pages/HomePage'
 import TripPage from '@views/pages/TripPage'
+import CheckoutPage from '@views/pages/CheckoutPage'
 
 import PageFrame from '@views/partials/PageFrame'
 import { $utils } from '@helper'
@@ -46,6 +47,16 @@ export default [{
         ignoreAuth: true
       },
       component: resolve => require(['@views/pages/TripPage'], resolve)
+    },
+    {
+      path: 'checkout',
+      fullpath: '/checkout',
+      isHideInMenu: false,
+      meta: {
+        title: $utils.titleLang('Checkout'),
+        ignoreAuth: true
+      },
+      component: resolve => require(['@views/pages/CheckoutPage'], resolve)
     },
     {
       path: 'gallery',
