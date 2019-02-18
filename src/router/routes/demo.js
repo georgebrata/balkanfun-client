@@ -41,7 +41,7 @@ export default [{
     {
       path: 'trip',
       fullpath: '/trip',
-      isHideInMenu: false,
+      isHideInMenu: true,
       meta: {
         title: $utils.titleLang('Trip'),
         ignoreAuth: true
@@ -51,7 +51,7 @@ export default [{
     {
       path: 'checkout',
       fullpath: '/checkout',
-      isHideInMenu: false,
+      isHideInMenu: true,
       meta: {
         title: $utils.titleLang('Checkout'),
         ignoreAuth: true

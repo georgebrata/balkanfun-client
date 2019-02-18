@@ -1,10 +1,10 @@
 <template>
   <header class="header mobile-header">
-    <div class="pre-header xs-hide sm-hide">
+    <div class="pre-header">
       <div class="max-width-header">
-        <div class="street"><i class="el-icon-location mr2"></i>Tipografiei nr.8, Cluj-Napoca</div>
-        <div class="number"><i class="el-icon-phone mr2"></i> <a href="tel:+40741653259">0741 653 259 /  Fax:  0264 432 600</a></div>
-        <div class="working-time"><i class="el-icon-time mr2"></i>Luni-Vineri 10-18h</div>
+        <div class="street hidden-md-down"><i class="el-icon-location mr2"></i>Tipografiei nr.8, Cluj-Napoca</div>
+        <div class="number"><i class="el-icon-phone mr2"></i> <a href="tel:+40741653259">Tel: 0741 653 259 <span class="hidden-md-down">/  Fax:  0264 432 600</span></a></div>
+        <div class="working-time hidden-md-down"><i class="el-icon-time mr2"></i>Luni-Vineri 10-18h</div>
       </div>
     </div>
     <h1 class="logo">
@@ -16,11 +16,11 @@
     </h1>
 
     <!-- mobile menu toggle -->
-    <a href="javascript:;" class="menu hidden-sm-and-up" @click="onToggleMenuClick" >
+    <a href="javascript:;" class="menu hidden-lg-up" @click="onToggleMenuClick" >
       <span></span>
     </a>
 
-    <el-menu class="el-menu-demo float-right hidden-sm-and-down" mode="horizontal" @select="handleSelect">
+    <el-menu class="el-menu-demo float-right hidden-md-down" mode="horizontal" @select="handleSelect">
       <el-menu-item index="1">
         <router-link to='/'>Acasa</router-link>
       </el-menu-item>
@@ -107,12 +107,13 @@ export default {
 };
 </script>
 
-<style type="text/css" lang="scss">
+<style type="text/css" lang="scss" scoped>
 @import "./../../assets/scss/variables.scss";
 @import "./../../assets/scss/mixins.scss";
 .el-menu-item a {
   color: #909399;
 }
+
 
 .pre-header {
   background: #2C6FA6;
@@ -126,17 +127,17 @@ export default {
 }
 
 .max-width-header {
-  max-width: 65%;
+  max-width: 100%;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 70px;
   .street {
     float: left;
     text-align: left;
-    width: 33.3%;
+    width: 33%;
   }
   .number {
     text-align: center;
-    width: 33.3%;
+    width: 33%;
     float: left;
   }
   .working-time {
@@ -150,12 +151,12 @@ export default {
   position: fixed;
   z-index: 9;
   height: $header-height;
-  width: 100%;
+  width: 101%;
   min-width: 320px;
   background-color: $header-bg;
   border-bottom: solid 1px #e6e6e6;
   @include clearfix();
-
+  padding-bottom: 5px;
   a {
     color: white;
     &:hover,
@@ -221,13 +222,13 @@ export default {
 }
 
 .menu {
-  display: none;
   position: absolute;
   top: 0;
   right: 0;
-  padding: 35px 15px 10px;
+  padding: 50px 15px 10px;
   width: 60px;
   height: 60px;
+  margin-right: 25px;
 }
 .menu span:after,
 .menu span:before {
@@ -269,34 +270,21 @@ export default {
   }
 }
 
-@media (max-width: 768px) {
-  #app .header {
-    .menu {
-      display: block;
-    }
-    .logo {
-      text-align: center;
-      @include absolute-center;
-      float: none;
-      padding: 0;
-      img {
-        margin-right: 5px;
-      }
-    }
-    .operate {
-      .account {
-        max-width: 80px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-    }
-  }
-}
+
 .el-menu-demo {
   border-bottom: 0 !important;
+  padding-right: 50px;
 }
 .el-menu-item a, .el-submenu__title a {
   color: #909399 !important;
 }
+.el-menu--horizontal>.el-menu-item {
+  height: 50px;
+}
+@media (max-width: 991px) {
+  .max-width-header .number {
+    width: 100%;
+  }
+}
+
 </style>

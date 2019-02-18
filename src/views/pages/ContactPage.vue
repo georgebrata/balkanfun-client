@@ -6,15 +6,15 @@
         <el-col :sm="24" :lg="12" class="text-center">
           <h1><i class="el-icon-location-outline mr2"></i>Cluj-Napoca</h1><br>
           <hr>
-          <h3>Tipografiei nr.8, Etaj:1, Zoor Gallery</h3><br>
+          <h3>Tipografiei nr.8, etaj 1, Zoor Gallery</h3><br>
           <h3>Tel: +40 0741 653 259</h3><br>
           <h3>Fax : 0264 432 600</h3><br>
           <hr>
           <h4>Program de lucru: Luni-Vineri 10 -18</h4>
-          <el-card class="m3 maps w-100">MAPS</el-card>
+          <el-card class="m3 maps">MAPS</el-card>
         </el-col>
         <el-col :sm="24" :lg="12" class="p4">
-          <el-form ref="form" :model="form" class="p4">
+          <el-form class="contact-form p4" ref="form" :model="form">
             <el-form-item class="pr4 pl4">
               <h2 class="mb2">Contacteaza-ne</h2><hr>
             </el-form-item>
@@ -88,5 +88,10 @@ export default {
 <style lang="scss">
 .maps {
   height: 400px;
+}
+@media (max-width: 992px) {
+  .contact-form {
+    padding: 10px;
+  }
 }
 </style>

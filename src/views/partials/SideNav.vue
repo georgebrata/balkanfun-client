@@ -1,9 +1,8 @@
 <template>
   <div class="sidenav">
-    <el-menu router
-      :default-openeds="defaultOpeneds">
+    <el-menu>
       <template v-for="(item, index) in menuList">
-        <side-nav-node :model="item"></side-nav-node>
+        <side-nav-node :model="item" :key="index"></side-nav-node>
       </template>
     </el-menu>
   </div>
@@ -11,23 +10,29 @@
 
 <script>
 import SideNavNode from './SideNavNode'
+import routes from "../../router/routes/demo.js";
 
 export default {
   name: 'side-nav',
 
   data () {
     return {
-      defaultOpeneds: ['offers', 'gallery', 'faq', 'about-us', 'contact'],
     }
   },
 
   components: {
     SideNavNode
   },
-
   computed: {
     menuList () {
-      return this.$store.state.menuList
+      //return this.$store.state.menuList
+      return routes[0].children;
+    }
+  },
+    methods: {
+    onMenuItemClick (item) {
+      console.log(item);
+      this.$router.push(item)
     }
   }
 }

@@ -4,8 +4,11 @@ import actions from './actions'
 import getters from './getters'
 import mutations from './mutations'
 import createLogger from 'vuex/dist/logger'
+import VueYoutube from 'vue-youtube'
+
 
 Vue.use(Vuex)
+Vue.use(VueYoutube)
 
 const state = {
   userId: '',

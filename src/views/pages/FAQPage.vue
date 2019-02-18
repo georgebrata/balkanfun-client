@@ -2,9 +2,9 @@
   <section class="page-module">
     <hero-image title="Intrebari frecvente"></hero-image>
     <div class="module-content mt-4 mb-4">
-      <el-row>
-        <el-col :span="16" :offset="4">
-          <el-collapse v-model="activeName">
+      <el-row type="flex" class="row-bg" justify="center">
+        <el-col :span="22" :sm="22" :md="20" :lg="16" :xl="12">
+          <el-collapse v-model="activeName" accordion>
             <el-collapse-item title="Cu ce vom merge?" name="1">
               <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fGALEBODYrg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </el-collapse-item>
@@ -19,13 +19,27 @@
               <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/bf5BxtmF1wA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </el-collapse-item>
             <el-collapse-item title="Cum arată Pool Party?" name="5">
-              <span>TODO: Lightbox Gallery</span>
+              <Vuelightbox id="poolParty-lightbox"
+                :album_class=" 'poolParty-lightbox' "
+                :images="poolPartyImages"
+                :image_class=" 'img-responsive img-rounded' "
+                :options="options">
+              </Vuelightbox>        
             </el-collapse-item>
             <el-collapse-item title="Cum arată un party de nota 10?" name="6">
-              <span>TODO: Lightbox Gallery</span>
+              <Vuelightbox id="partyTen-lightbox"
+                :album_class=" 'my-album-class' "
+                :images="partyTen"
+                :image_class=" 'img-responsive img-rounded' "
+                :options="options">
+              </Vuelightbox>  
             </el-collapse-item>
             <el-collapse-item title="Cum arată un beach party?" name="7">
-              <span>TODO: Lightbox Gallery</span>
+              <Vuelightbox id="beachParty-lightbox"
+                :images="beachParty"
+                :image_class=" 'img-responsive img-rounded' "
+                :options="options">
+              </Vuelightbox>  
             </el-collapse-item>
             <el-collapse-item title="Cine sunt fetele?" name="8">
               <div>Grecia cu siguranță nu te va lasa înfometat ! Restaurantele de la tot pasul sunt gata să vă ofere delicatese grecești pe bani puțini. În cazul în care timpul dintre petreceri nu iți permite să te așezi la masa noi îți recomandăm un Gyros la doar 2 euro!</div>
@@ -60,6 +74,10 @@ import RoutesMapConfig from "@router/routes";
 import Divider from "../partials/Divider";
 import HeroImage from "../partials/HeroImage";
 import BalkanfunFooter from "../partials/BalkanfunFooter";
+import Vuelightbox from 'vue-simple-lightbox'
+
+import gallery from "../../data/faq-images";
+
 
 export default {
   name: "FAQPage",
@@ -67,12 +85,19 @@ export default {
   data() {
     return {
       activeName: "1",
+      poolPartyImages: gallery.poolPartyImages,
+      partyTen: gallery.party10,
+      beachParty: gallery.beachParty,
+      options: {
+        closeText : 'X'
+      }
     };
   },
   components: {
     Divider,
     HeroImage,
-    BalkanfunFooter
+    BalkanfunFooter,
+    Vuelightbox
   },
 };
 </script>
