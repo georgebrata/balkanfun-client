@@ -1,0 +1,25 @@
+[{
+    "value": "Option1",
+    "nume": "Zakynthos | 10 August - 18 August 2019",
+    "camere": [
+      {
+        "disponibile": 5,
+        "tip_camera": "dublu",
+        "pret_euro": "300",
+        "locatie": "locatie",
+        "nrPersoane": "0"
+      }
+    ]
+  }, {
+    "value": "Option2",
+    "nume": "Kavos | 6 August - 14 August 2019"
+  }, {
+    "value": "Option3",
+    "nume": "Zakynthos | 18 August - 26 August 2018"
+  }, {
+    "value": "Option4",
+    "nume": "Zakynthos | 13 August - 01 Septembrie 2018"
+  }, {
+    "value": "Option5",
+    "nume": "Kavos | 13 August - 21 August 2019"
+  }]

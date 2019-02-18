@@ -5,6 +5,7 @@ import AboutUsPage from '@views/pages/AboutUsPage'
 import HomePage from '@views/pages/HomePage'
 import TripPage from '@views/pages/TripPage'
 import CheckoutPage from '@views/pages/CheckoutPage'
+import TestPage from '@views/pages/TestPage'
 
 import PageFrame from '@views/partials/PageFrame'
 import { $utils } from '@helper'
@@ -19,6 +20,16 @@ export default [{
     ignoreAuth: true
   },
   children: [
+    {
+      path: '/test',
+      fullpath: '/test',
+      isHideInMenu: false,
+      meta: {
+        title: $utils.titleLang('Test'),
+        ignoreAuth: true
+      },
+      component: resolve => require(['@views/pages/TestPage'], resolve)
+    },
     {
       path: '/',
       fullpath: '/',
